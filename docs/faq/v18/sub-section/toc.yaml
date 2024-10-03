@@ -1,0 +1,20 @@
+title: Sub-section Example TOC
+href: index.yaml
+navigation:
+  logo:
+    url: "https://diplodoc.com"
+    dark:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/logo/ddos-logo-dark.svg"
+    light:
+      icon: "https://storage.yandexcloud.net/diplodoc-www-assets/navigation/diplodoc-logo.svg"
+  header:
+    leftItems:
+      - text: "Relative Link"
+        type: "link"
+        url: "./en/about.md"
+      - text: "Absolute Link"
+        type: "link"
+        url: "https://diplodoc.com/docs/ru/project/"
+items:
+  - name: Content page under sub-section
+    href: content.md

@@ -1,0 +1,6 @@
+allowHTML: true
+langs: ['ru']
+
+resources:
+  style:
+    - _assets/style/custom.css

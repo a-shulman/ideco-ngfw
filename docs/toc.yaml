@@ -1,0 +1,19 @@
+href: index.yaml
+navigation:
+  logo:
+    url: "index.html"
+    dark:
+      icon: "./_assets/image.avif"
+      text: "Ideco"
+    light:
+      icon: "./_assets/image.avif"
+      text: "Ideco"
+  header:
+    rightItems:
+      - type: controls
+      - type: 'link'
+        text: 'Сайт Ideco'
+        url: 'https://ideco.ru/'
+        arrow: true
+        urlTitle: 'Официальный сайт компании Ideco'
+

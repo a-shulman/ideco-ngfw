@@ -1,0 +1,58 @@
+title: Ideco NGFW
+href: about.md
+navigation:
+  logo:
+    url: "../../index.html"
+    dark:
+      icon: "./_assets/image.avif"
+      text: "Ideco NGFW"
+    light:
+      icon: "./_assets/image.avif"
+      text: "Ideco NGFW"
+  header:
+    leftItems:
+      - text: 'v17'
+        type: 'dropdown'
+        items:
+          - text: 'v18'
+            url: '../v18/about.html'
+            type: 'link'
+          - text: 'v17'
+            url: './about.html'
+            type: 'link'
+      - type: "link"
+        text: "NGFW"
+        url: "./about.html"
+      - type: "link"
+        text: "Ideco Center"
+        url: "../../cc/v18/about.html"
+      - type: "link"
+        text: "NGFW VPP"
+        url: "../../vpp/v18/about.html"
+      - type: "link"
+        text: "MY.IDECO"
+        url: "../../my-ideco/about.html"
+      - type: "link"
+        text: "FAQ"
+        url: "../../faq/v18/about.html"
+    rightItems:
+      - text: 'Скачать PDF'
+        type: 'link'
+        url: 'ru/contribution'
+      - type: controls
+      - type: 'link'
+        text: 'Сайт Ideco'
+        url: 'https://ideco.ru/'
+        arrow: true
+        urlTitle: 'Официальный сайт компании Ideco'
+items: 
+  - name: About
+    href: about.md
+  - name: Additional page 
+    href: page.md
+  - name: Another page 
+    href: anotherpage.md
+  - name: Sub-Section 
+    include:
+      path: sub-section/toc.yaml
+      mode: link
