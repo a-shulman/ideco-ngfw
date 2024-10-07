@@ -1,6 +1,9 @@
 name: Build
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     paths: 'docs/**'
     types: [opened, synchronize]
@@ -17,4 +20,3 @@ jobs:
         uses: diplodoc-platform/docs-build-action@v3
         with:
           revision: "pr-${{ github.event.pull_request.number }}"
-          src-root: "./docs"
