@@ -1,4 +1,6 @@
 node_modules
+docs-html
+keys.txt
 .yarn/*
 !.yarn/patches
 !.yarn/plugins

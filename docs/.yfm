@@ -1,6 +1,12 @@
 allowHTML: true
-langs: ['ru']
+langs: ['ru', 'en']
 
 resources:
   style:
     - _assets/style/custom.css
+
+docs-viewer:
+  project-name: ideco
+  no-index: true # Remove this after the public release
+  themes: ['light', 'dark']
+  # metrika: 88962303
