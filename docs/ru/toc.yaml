@@ -10,46 +10,35 @@ navigation:
       icon: "https://storage.yandexcloud.net/teamdocs/image.avif"
       text: "Ideco NGFW"
   header:
-    # leftItems:
-    #   - text: 'v18'
-    #     type: 'dropdown'
-    #     items:
-    #       - text: 'v18'
-    #         url: './about.html'
-    #         type: 'link'
-      # - type: "link"
-      #   text: "NGFW"
-      #   url: "./about.html"
-      # - type: "link"
-      #   text: "Ideco Center"
-      #   url: "../cc/about.html"
-      # - type: "link"
-      #   text: "NGFW VPP"
-      #   url: "../vpp/about.html"
-      # - type: "link"
-      #   text: "MY.IDECO"
-      #   url: "../my-ideco/about.html"
-      # - type: "link"
-      #   text: "FAQ"
-      #   url: "../faq/about.html"
+    leftItems:
+      - type: "button"
+        theme: "flat"
+        size: "xl"
+        text: "Center"
+        url: "https://common---gh-ajepm934i95oso9d4jgr.viewer.diplodoc.com"
+      - type: "button"
+        theme: "flat"
+        size: "xl"
+        text: "VPP"
+        url: "https://common---gh-ajerkp59lhln1g4251t7.viewer.diplodoc.com"
+      - type: "button"
+        theme: "flat"
+        size: "xl"
+        text: "MY.IDECO"
+        url: ""
     rightItems:
-      - text: 'Скачать PDF'
-        type: 'link'
-        url: 'ru/contribution'
       - type: controls
-      - type: 'link'
-        text: 'Сайт Ideco'
+      - type: "button"
+        size: "s"
+        theme: "flat"
+        text: 'Скачать PDF'
         url: 'https://ideco.ru/'
-        arrow: true
-        urlTitle: 'Официальный сайт компании Ideco'
 items: 
-  - name: About
+  - name: Об Ideco NGFW
     href: about.md
-  - name: Additional page 
-    href: page.md
-  - name: Another page 
-    href: anotherpage.md
-  - name: Sub-Section 
+  - name: Быстрый старт 
+    labeled: true
     include:
-      path: sub-section/toc.yaml
+      path: start/toc.yaml
       mode: link
+
