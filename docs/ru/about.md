@@ -5,7 +5,7 @@ description: >-
   управляемым, безопасным и надежным.
 ---
 
-# Об Ideco NGFW v18
+# Об Ideco NGFW v17
 
 ## Возможности Ideco NGFW:
 
