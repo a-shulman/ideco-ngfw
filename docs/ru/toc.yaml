@@ -11,21 +11,15 @@ navigation:
       text: "Ideco NGFW"
   header:
     leftItems:
-      - type: "button"
-        theme: "flat"
-        size: "xl"
+      - type: "link"
         text: "Center"
-        url: "https://common---gh-ajepm934i95oso9d4jgr.viewer.diplodoc.com"
-      - type: "button"
-        theme: "flat"
-        size: "xl"
+        url: "./settings-cc/README.html"
+      - type: "link"
         text: "VPP"
-        url: "https://common---gh-ajerkp59lhln1g4251t7.viewer.diplodoc.com"
-      - type: "button"
-        theme: "flat"
-        size: "xl"
-        text: "MY.IDECO"
         url: ""
+      - type: "link"
+        text: "MY.IDECO"
+        url: "./settings-my/README.html"
     rightItems:
       - type: controls
       - type: "button"
@@ -33,12 +27,8 @@ navigation:
         theme: "flat"
         text: 'Скачать PDF'
         url: 'https://ideco.ru/'
-items: 
-  - name: Об Ideco NGFW
-    href: about.md
-  - name: Быстрый старт 
-    labeled: true
-    include:
-      path: start/toc.yaml
+items:
+  - include:
+      path: ngfw/toc.yaml
       mode: link
 

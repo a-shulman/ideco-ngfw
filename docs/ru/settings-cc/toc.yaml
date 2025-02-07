@@ -1,0 +1,50 @@
+title: Ideco Center
+href: ./README.md
+navigation:
+  logo:
+    url: "../index.html"
+    dark:
+      icon: "https://storage.yandexcloud.net/teamdocs/image.avif"
+      text: "Ideco NGFW"
+    light:
+      icon: "https://storage.yandexcloud.net/teamdocs/image.avif"
+      text: "Ideco NGFW"
+  header:
+    leftItems:
+      - type: "link"
+        text: "NGFW"
+        url: "../ngfw/README.html"
+      - type: "link"
+        text: "VPP"
+        url: ""
+      - type: "link"
+        text: "MY.IDECO"
+        url: "../settings-my/README.html"
+    rightItems:
+      - type: controls
+      - type: "button"
+        size: "s"
+        theme: "flat"
+        text: 'Скачать PDF'
+        url: 'https://ideco.ru/'
+items:
+  - name: Настройка Ideco Center 
+    labeled: true
+  - name: Об Ideco Center
+    href: ./README.md
+  - name: Установка Ideco Center
+    href: ./setup.md
+  - name: Серверы
+    href: ./servers.md
+  - name: Мониторинг
+    href: ./monitor.md
+  - name: Политики и объекты
+    href: ./policies-and-objects.md
+  - name: Профили безопасности
+    href: ./security-profiles.md
+  - name: Сервисы
+    href: ./services.md
+  - name: Отчеты и журналы
+    href: ./reports.md
+  - name: Управление сервером
+    href: ./server-management.md
