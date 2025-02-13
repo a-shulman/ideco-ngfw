@@ -1,4 +1,4 @@
-# Бэкапы и возврат к предыдущей версии
+# Бэкапы
 
 {% note info %}
 
@@ -93,16 +93,16 @@ PUT /backup/settings
 }
 ```
 
-* `common` - общие настройки бекапов:
-  * `hour` - час, в который делается автоматический бекап, число от 0 до 23;
-  * `rotate` - удалять бекапы старше недели (`weekly`) или месяца (`monthly`).
-* `ftp` - настройки выгрузки бекапов на FTP:
+* `common` - общие настройки бэкапов:
+  * `hour` - час, в который делается автоматический бэкап, число от 0 до 23;
+  * `rotate` - удалять бэкапы старше недели (`weekly`) или месяца (`monthly`).
+* `ftp` - настройки выгрузки бэкапов на FTP:
   * `enabled` - если `true`, то выгрузка включена, `false` - выключена;
   * `server` - адрес сервера, валидный домен или IP-адрес;
   * `login` - логин, не пустая строка;
   * `password` - пароль, не пустая строка, до 42 символов;
   * `remote_dir` - удаленный каталог, не пустая строка.
-* `cifs` - настройки выгрузки бекапов в общую папку CIFS:
+* `cifs` - настройки выгрузки бэкапов в общую папку CIFS:
   * `enabled` - если `true`, то выгрузка включена, `false` - выключена;
   * `server` - адрес сервера, валидный домен или IP-адрес;
   * `login` - логин, не пустая строка;
@@ -186,7 +186,7 @@ GET /backup/backups
   * `major` - мажорный номер версии;
   * `minor` - минорный номер версии;
   * `build` - номер сборки;
-  * `timestamp` - время выхода версии;
+  * `timestamp` - время выхода версии; 
   * `vendor` - вендор ("Ideco");
   * `product` - код продукта;
   * `kind` - вид продукта;
@@ -266,86 +266,6 @@ POST /backup/backups/<id бэкапа>/apply/fast
 ```
 DELETE /backup/backups/<id бэкапа>
 ```
-
-**Ответ на успешный запрос:** 200 OK
-
-{% endcut %}
-
-## Возврат к предыдущей версии Ideco NGFW
-
-{#top}
-
-{% cut "Получение информации о наличии предыдущей версии" %}
-
-```
-GET /system_management/change_sys_root
-```
-
-**Ответ на успешный запрос:**
-
-```json5
-{
-
-   "previous_version": {
-      "major": "integer",
-      "minor": "integer",
-      "build": "integer",
-      "timestamp": "integer",
-      "vendor": "string",
-      "product": "UTM" | "CC",
-      "kind": "FSTEK" | "NGFW-FSTEK" | "VPP" | "STANDARD" | "BPF",
-      "release_type": "release" | "beta" | "devel"
-   }
-}
-```
-
-* `major` - мажорный номер версии;
-* `minor` - минорный номер версии;
-* `build` - номер сборки;
-* `timestamp` - время сборки версии в формате UNIX timestamp;
-* `vendor` - вендор продукта. Значения могут быть произвольными;
-* `product` - название продукта;
-* `kind` - вид продукта;
-* `release_type` - тип редакции.
-
-Если предыдущей версии не было, то значение поля `previous_version` будет `null`.
-
-{% endcut %}
-
-{#top}
-
-{% cut "Возврат к предыдущей версии" %}
-
-```
-POST /system_management/change_sys_root
-```
-
-**Json-тело запроса:**
-
-```json5
-{
-
-   "version": {
-      "major": "integer",
-      "minor": "integer",
-      "build": "integer",
-      "timestamp": "integer",
-      "vendor": "string",
-      "product": "UTM" | "CC",
-      "kind": "FSTEK" | "NGFW-FSTEK" | "VPP" | "STANDARD" | "BPF",
-      "release_type": "release" | "beta" | "devel"
-   }
-}
-```
-
-* `major` - мажорный номер версии;
-* `minor` - минорный номер версии;
-* `build` - номер сборки;
-* `timestamp` - время сборки версии в формате UNIX timestamp;
-* `vendor` - вендор продукта. Значения могут быть произвольными;
-* `product` - название продукта;
-* `kind` - вид продукта;
-* `release_type` - тип редакции.
 
 **Ответ на успешный запрос:** 200 OK
 

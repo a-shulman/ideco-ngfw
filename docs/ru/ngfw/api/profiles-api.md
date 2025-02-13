@@ -24,11 +24,9 @@ GET /ips/profiles
   ...
 ]
 ```
-* `id` - идентификатор профиля или фиксированная строка `__DEFAULT_IPS_PROFILE_ID__` (шаблонный профиль);
+* `id` - идентификатор профиля;
 * `name` - название профиля, максимальная длина - 42 символа;
 * `comment` - комментарий, максимальная длина - 255 символов.
-
-Шаблонный профиль отображается в режиме **Только для чтения**. Идентификатор шаблонного профиля не может быть использован в запросах на изменение/удаление профиля и на создание/изменение/перемещение/удаление правил профиля.
 
 {% endcut %}
 
@@ -238,25 +236,22 @@ PATCH /ips/profiles/<profile_id>/rules/<rule_id>
 {% cut "Перемещение правила в профиле" %}
 
 ```
-PATCH /ips/profiles/rules/move
+PATCH /ips/profiles/<profile_id>/rules/<rule_id>/move
 ```
+
+* `profile_id` - идентификатор профиля, в котором перемещается правило;
+* `rule_id` - идентификатор правила в профиле.
 
 **Json-тело запроса:**:
 
 ```json5
 {
 
-    "params": {
-        "profile_id": "string",
-        "rule_id": "integer",
-        "anchor_item_id": "integer",
-        "insert_after": "boolean"
-    }
+    "anchor_item_id": "string",
+    "insert_after": "boolean"
 }
 ```
 
-* `profile_id` - идентификатор профиля, в котором перемещается правило;
-* `rule_id` - идентификатор правила в профиле;
 * `anchor_item_id` - идентификатор правила, выше или ниже которого нужно разместить `rule_id`;
 * `insert_after` - вставить до (`false`) или после (`true`) правила `anchor_item_id`.
 
@@ -343,8 +338,6 @@ POST /ips/profiles-create-with-rules
 POST /ips/profiles/<id профиля>/copy
 ```
 
-В качестве `id профиля` может быть указана фиксированная строка `__DEFAULT_IPS_PROFILE_ID__` для создания копии шаблонного профиля. Поле **Комментарий** будет заменено на пустую строку.
-
 **Ответ на успешный запрос:**
 
 ```json5
@@ -365,8 +358,6 @@ POST /ips/profiles/<id профиля>/copy
 ```
 GET /ips/profiles/<id профиля>/signatures
 ```
-
-В качестве `id профиля` может быть указана фиксированная строка `__DEFAULT_IPS_PROFILE_ID__` для получения списка сигнатур шаблонного профиля.
 
 **Ответ на успешный запрос:**
 
@@ -446,7 +437,7 @@ GET /ips/profiles/actions-counts
 }
 ```
 
-* `profile_id` - идентификатор профиля или фиксированная строка `__DEFAULT_IPS_PROFILE_ID__` (шаблонный профиль):
+* `profile_id` - идентификатор профиля:
   * `pass` - **Пропускать**;
   * `alert` - **Предупреждать**;
   * `drop` - **Блокировать**;
@@ -549,7 +540,7 @@ GET /reverse_proxy_backend/waf/profiles
     ],
     "server_tokens": "boolean",
     "comment": "string",
-    "from_central_console": "boolean"
+    "central_console": "boolean"
   },
   ...
 ]
@@ -566,7 +557,7 @@ GET /reverse_proxy_backend/waf/profiles
   * `enabled` - статус: `true` - включено, `false` - выключено.
 * `server_tokens` - статус HTTP-заголовка Server: `true` - показывать, `false` - скрывать;
 * `comment` - комментарий, может быть пустым, максимальная длина - 255 символов;
-* `from_central_console` - `true`, если профиль создан в Центральной консоли, только для чтения.
+* `central_console` - `true`, если профиль создан в Центральной консоли, только для чтения.
 
 {% endcut %}
 
@@ -588,7 +579,7 @@ POST /reverse_proxy_backend/waf/profiles
     "disabled_categories": ["string"],
     "server_tokens": "boolean",
     "comment": "string",
-    "from_central_console": "boolean"
+    "central_console": "boolean"
 }
 ```
 
@@ -597,7 +588,7 @@ POST /reverse_proxy_backend/waf/profiles
 * `disabled_categories` - список идентификаторов категорий для исключения, максимальная длина - 128 символов, при создании профиля может быть пустым;
 * `server_tokens` - статус HTTP-заголовка Server: `true` - показывать, `false` - скрывать;
 * `comment` - комментарий, может быть пустым, максимальная длина - 255 символов;
-* `from_central_console` - `true`, если профиль создан в Центральной консоли, только для чтения.
+* `central_console` - `true`, если профиль создан в Центральной консоли, только для чтения.
 
 **Ответ на успешный запрос:**
 
@@ -628,7 +619,7 @@ PATCH /reverse_proxy_backend/waf/profiles/<id профиля>
     "disabled_categories": ["string"],
     "server_tokens": "boolean",
     "comment": "string",
-    "from_central_console": "boolean"
+    "central_console": "boolean"
 }
 ```
 
@@ -637,7 +628,7 @@ PATCH /reverse_proxy_backend/waf/profiles/<id профиля>
 * `disabled_categories` - список идентификаторов категорий правил, которые были отключены, максимальная длина - 128 символов;
 * `server_tokens` - статус HTTP-заголовка Server: `true` - показывать, `false` - скрывать;
 * `comment` - комментарий, может быть пустым, максимальная длина - 255 символов;
-* `from_central_console` - `true`, если профиль создан в Центральной консоли, только для чтения.
+* `central_console` - `true`, если профиль создан в Центральной консоли, только для чтения.
 
 **Ответ на успешный запрос:** 200 ОК
 
@@ -670,7 +661,6 @@ GET /reverse_proxy_backend/waf/categories
   {
     "id": "string",
     "title": "string",
-    "required": "boolean",
     "description": "string"
   },
   ...
@@ -679,7 +669,6 @@ GET /reverse_proxy_backend/waf/categories
 
 * `id` - идентификатор категории, максимальная длина - 42 символа;
 * `title` - название категории, максимальная длина - 42 символа;
-* `required` - является ли категория необходимой, т.е. еe нельзя будет выключать;
 * `description` - описание категории, максимальная длина - 255 символов.
 
 {% endcut %}
@@ -701,7 +690,6 @@ GET /reverse_proxy_backend/waf/profiles/<id профиля>/categories
   {
     "id": "string",
     "title": "string",
-    "required": "boolean",
     "description": "string"
   },
   ...
@@ -710,7 +698,6 @@ GET /reverse_proxy_backend/waf/profiles/<id профиля>/categories
 
 * `id` - идентификатор категории, максимальная длина - 42 символа;
 * `title` - название категории, максимальная длина - 42 символа;
-* `required` - является ли категория необходимой, т.е. еe нельзя будет выключать;
 * `description` - описание категории, максимальная длина - 255 символов.
 
 {% endcut %}
@@ -856,7 +843,7 @@ PATCH /reverse_proxy_backend/waf/profiles/<id профиля>/rules/<id прав
 {% cut "Перемещение белых и черных списков в профиле" %}
 
 ```
-PATCH /reverse_proxy_backend/waf/profiles/rules/move
+PATCH /reverse_proxy_backend/waf/profiles/<id профиля>/rules/move
 ```
 
 **Json-тело запроса:**
@@ -865,16 +852,14 @@ PATCH /reverse_proxy_backend/waf/profiles/rules/move
 {
 
   "params": {
-    "profile_id": "string",
-    "rule_id": "integer",
+    "id": "integer",
     "anchor_item_id": "integer",
     "insert_after": "boolean",
   },
 }
 ```
 
-* `profile_id` - идентификатор профиля, в котором перемещается правило;
-* `rule_id` - идентификатор перемещаемого правила;
+* `id` - идентификатор перемещаемого правила;
 * `anchor_item_id` - идентификатор правила, относительно которого будет перемещено правило;
 * `insert_after` - вставить правило до или после `anchor_item_id`. Если `true` или отсутствует, то вставить правило сразу после указанного в `anchor_item_id`. Если `false`, то на месте указанного в `anchor_item_id`.
 

@@ -534,7 +534,7 @@ GET /content-filter/morph_analysis_dicts
             },
             ...
         ],
-        "from_central_console": "boolean"
+        "central_console": "boolean"
     },
     ...
 ]
@@ -549,7 +549,7 @@ GET /content-filter/morph_analysis_dicts
 * `words` - массив словарей:
     * `value` - слово/словосочетание. Длина - не больше 50 символов. Количество слов в словаре - не больше 1000;
     * `weight` - вес в словаре, целое неотрицательное число, может быть равен нулю.
-* `from_central_console` - `true`, если словарь сформирован в Центральной консоли, только для чтения.
+* `central_console` - `true`, если словарь сформирован в Центральной консоли, только для чтения.
 
 {% endcut %}
 

@@ -56,7 +56,7 @@ description: >-
 
 ![](../../_images/initial-setup3.png)
 
-Для публикации личного кабинета пользователя воспользуйтесь [статьей](../../ngfw/settings/services/user-personal-account.md).
+Для публикации личного кабинета пользователя воспользуйтесь [статьей](../../ngfw/settings/users/user-personal-account.md).
 
 {% endcut %}
 

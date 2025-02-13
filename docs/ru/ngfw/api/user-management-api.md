@@ -21,10 +21,10 @@ GET /user_backend/users
 ```json5
 [
     {
-        "id": "string",
+        "id": "integer",
         "name": "string",
         "login": "string",
-        "parent_id": "string",
+        "parent_id": "integer",
         "enabled": "boolean",
         "domain_type": "local" | "ad" | "ald" | "radius" | "device",
         "domain_name": "string",
@@ -70,7 +70,7 @@ POST /user_backend/users
     "name": "string",
     "login": "string",
     "psw": "string",
-    "parent_id": "string",
+    "parent_id": "integer",
     "phone_number": "string" | null,
     "comment": "string"
 }
@@ -113,7 +113,7 @@ PUT /user_backend/users/<id пользователя>
 
     "name": "string",
     "login": "string",
-    "parent_id": "string",
+    "parent_id": "integer",
     "enabled": "boolean",
     "domain_type": "string",
     "domain_name": "string",
@@ -194,9 +194,9 @@ GET /user_backend/groups
 ```json5
 [
     {
-        "id": "string",
+        "id": "integer",
         "name": "string",
-        "parent_id": "string",
+        "parent_id": "integer",
         "domain_type": "string",
         "domain_name": "string",
         "ldap_guid": "string"
@@ -232,7 +232,7 @@ POST /user_backend/groups
 {
 
     "name": "string",
-    "parent_id": "string"
+    "parent_id": "integer"
 }
 ```
 
@@ -268,7 +268,7 @@ PUT /user_backend/groups/<id группы>
 {
 
     "name": "string",
-    "parent_id": "string",
+    "parent_id": "integer",
     "domain_type": "string",
     "domain_name": "string",
     "ldap_guid": "string"
@@ -299,132 +299,6 @@ DELETE /user_backend/groups/<id группы>
 ```
 
 **Ответ на успешный запрос:** 200 ОК
-
-{% endcut %}
-
-## Настройки RADIUS-авторизации администраторов
-
-{#top}
-
-{% cut "Получение статуса RADIUS-авторизации" %}
-
-```
-GET /admins-radius-auth/state
-```
-
-**Ответ на успешный запрос:**
-
-```json5
-{
-
-  "enabled": "boolean"
-}
-```
-
-* `enabled` - если `true`, то RADIUS-авторизация включена, `false` - выключена.
-
-{% endcut %}
-
-{#top}
-
-{% cut "Изменение статуса RADIUS-авторизации" %}
-
-```
-PATCH /admins-radius-auth/state
-```
-
-**Json-тело запроса:**
-
-```json5
-{
-
-  "enabled": "boolean"
-}
-```
-
-* `enabled` - включить (`true`) или выключить (`false`) RADIUS-авторизацию.
-
-**Ответ на успешный запрос:** 200 OK
-
-{% endcut %}
-
-{#top}
-
-{% cut "Получение настроек RADIUS-авторизации" %}
-
-```
-GET /admins-radius-auth/settings
-```
-
-**Ответ на успешный запрос:**
-
-```json5
-{
-
-    "primary": {
-      "server": "string",
-      "port": "integer",
-      "secret": "string"
-    },
-    "secondary": {
-      "server": "string",
-      "port": "integer",
-      "secret": "string"
-    }
-}
-```
-
-* `primary` - основной сервер RADIUS-авторизации:
-    * `server` - IP-адрес или домен основного RADIUS-сервера, может быть пустой строкой;
-    * `port` - порт основного RADIUS-сервера. Целое число от 1 до 65535, по умолчанию `1812`, может быть null;
-    * `secret` - секрет основного RADIUS-сервера. Строка с максимальной длиной 128 символов, может быть пустой.
-* `allow_external` - резервный сервер RADIUS-авторизации, нельзя настроить без основного:
-    * `server` - IP-адрес или домен основного RADIUS-сервера, может быть пустой строкой;
-    * `port` - порт резервного RADIUS-сервера. Целое число от 1 до 65535, может быть null;
-    * `secret` - секрет основного RADIUS-сервера. Строка с максимальной длиной 128 символов, может быть пустой.
-
-Интеграция с RADIUS-сервером считается настроенной, если заполнены поля `server` и `secret`.
-
-{% endcut %}
-
-{#top}
-
-{% cut "Изменение настроек RADIUS-авторизации" %}
-
-```
-PATCH /admins-radius-auth/settings
-```
-
-**Json-тело запроса:**
-
-```json5
-{
-
-    "primary": {
-      "server": "string",
-      "port": "integer",
-      "secret": "string"
-    },
-    "secondary": {
-      "server": "string",
-      "port": "integer",
-      "secret": "string"
-    }
-}
-```
-
-* `primary` - основной сервер RADIUS-авторизации:
-    * `server` - IP-адрес или домен основного RADIUS-сервера, может быть пустой строкой;
-    * `port` - порт основного RADIUS-сервера. Целое число от 1 до 65535, по умолчанию `1812`, может быть null;
-    * `secret` - секрет основного RADIUS-сервера. Строка с максимальной длиной 128 символов, может быть пустой.
-* `allow_external` - резервный сервер RADIUS-авторизации, нельзя настроить без основного:
-    * `server` - IP-адрес или домен основного RADIUS-сервера, может быть пустой строкой;
-    * `port` - порт резервного RADIUS-сервера. Целое число от 1 до 65535, может быть null;
-    * `secret` - секрет основного RADIUS-сервера. Строка с максимальной длиной 128 символов, может быть пустой.
-
-Интеграция с RADIUS-сервером считается настроенной, если заполнены поля `server` и `secret`.
-
-**Ответ на успешный запрос:** 200 OK
 
 {% endcut %}
 

@@ -9,11 +9,11 @@
 
 
 
-[{#T}](web-traffic-log.md)
+[{#T}](web-logs.md)
 
 
 
-[{#T}](traffic-log.md)
+[{#T}](antivirus-logs.md)
 
 
 

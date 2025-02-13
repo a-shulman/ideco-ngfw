@@ -12,7 +12,7 @@ description: >-
 
 {% endnote %}
 
-DDNS в Ideco NGFW реализован через интеграцию с хостингом RU-CENTER. Перед настройкой DDNS зарегистрируйтесь на сайте [RU-CENTER](https://www.nic.ru) и приобретите [DNS-хостинг](https://www.nic.ru/catalog/for-domain-use/dns-hosting/). \
+DDNS в Ideco NGFW реализован через интеграцию с хостингом RU-CENTER. Перед настройкой DDNS зарегистрируйтесь на сайте [RU-CENTER](https://www.nic.ru/) и приобретите [DNS-хостинг](https://www.nic.ru/catalog/for-domain-use/dns-hosting/). \
 Для решения вопросов по работе с хостингом воспользуйтесь страницей [помощи](https://www.nic.ru/help/).
 
 ## Настройка DDNS
@@ -26,7 +26,7 @@ DDNS не будет работать:
 
 {% endnote %}
 
-1\. После входа в личный кабинет [RU-CENTER](https://www.nic.ru) откроется страница [Для клиентов](https://www.nic.ru/manager/manager.cgi/). Для дальнейшей работы откройте два раздела - **Мои домены** и **DNS-хостинг**:
+1\. После входа в личный кабинет [RU-CENTER](https://www.nic.ru/) откроется страница [Для клиентов](https://www.nic.ru/manager/manager.cgi/). Для дальнейшей работы откройте два раздела - **Мои домены** и **DNS-хостинг**:
 
 ![](../../../../_images/ddns.png)
 

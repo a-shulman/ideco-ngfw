@@ -3,8 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - 'main'
-      - 'v**'
+      - 'ICS-**'
   workflow_dispatch:
 
 jobs:
@@ -28,12 +27,12 @@ jobs:
         uses: diplodoc-platform/docs-upload-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          project-link: ${{ vars.DIPLODOC_PROJECT_LINK }}
+          project-link: ${{ vars.DIPLODOC_PROJECT_LINK_NORELEASE }}
           storage-endpoint: ${{ vars.DIPLODOC_STORAGE_ENDPOINT }}
           storage-region: ${{ vars.DIPLODOC_STORAGE_REGION }}
-          storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET }}
-          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
-          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
+          storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET_NORELEASE }}
+          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID_NORELEASE }}
+          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY_NORELEASE }}
   release:
     needs: upload
     runs-on: ubuntu-latest
@@ -47,6 +46,6 @@ jobs:
         with:
           version: "${{ steps.extract_version.outputs.version }}"
           revision: "${{ github.sha }}"
-          storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET }}
-          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID }}
-          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY }}
+          storage-bucket: ${{ vars.DIPLODOC_STORAGE_BUCKET_NORELEASE }}
+          storage-access-key-id: ${{ secrets.DIPLODOC_ACCESS_KEY_ID_NORELEASE }}
+          storage-secret-access-key: ${{ secrets.DIPLODOC_SECRET_ACCESS_KEY_NORELEASE }}

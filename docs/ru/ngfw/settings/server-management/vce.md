@@ -109,7 +109,7 @@ VCE (virtual context engine) - это функция Ideco NGFW, которая 
 
 ## Удаление VCE
 
-Удалить VCE можно, нажав на ![](../../../_images/delete-icon.png) в корневом VCE.
+Удалить VCE можно, нажав на ![](../../../_images/icon-delete1.png) в корневом VCE.
 
 {% note warning %}
 

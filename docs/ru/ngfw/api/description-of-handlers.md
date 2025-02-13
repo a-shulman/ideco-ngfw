@@ -172,10 +172,10 @@ GET /gather_stat/settings
 ### Изменение настроек
 
 ```
-PATCH /gather_stat/settings
+PUT /gather_stat/settings
 ```
 
-**Json-тело запроса:**
+**Json-тело запроса**
 
 ```json5
 {
@@ -367,7 +367,7 @@ GET /license/update-type
 {% cut "Изменение механизма обновления лицензии" %}
 
 ```
-PATCH /license/update-type
+PUT /license/update-type
 ```
 
 **Json-тело запроса:**

@@ -10,7 +10,7 @@
 
 * [Контент-фильтр](../../../ngfw/settings/access-rules/content-filter/README.md);
 * [Контроль приложений](../../../ngfw/settings/security-profiles/application-control/README.md);
-* [Антивирус](../../../ngfw/settings/access-rules/antivirus.md) (антивирус Касперского);
+* [Антивирусы веб-трафика](../../../ngfw/settings/access-rules/antivirus.md) (антивирус Касперского);
 * [Предотвращение вторжений](../../../ngfw/settings/access-rules/ips/README.md).
 
 Эти службы полноценно работают только при активной подписке на обновления Ideco NGFW. Для проверки статуса вашей лицензии и модулей, которые в нее входят, откройте раздел **Управление сервисом -> Лицензия**.

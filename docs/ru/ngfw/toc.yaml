@@ -94,11 +94,13 @@ items:
             href: ./settings/users/authorization/authorization-by-subnet.md
           - name: Авторизация пользователей терминальных серверов
             href: ./settings/users/authorization/terminal-server.md
-      - name: Двухфакторная аутентификация
-        href: ./settings/users/two-factor-authentication.md
+      - name: Личный кабинет пользователя
+        href: ./settings/users/user-personal-account.md
       - name: VPN-подключение
         href: ./settings/users/authorization/vpn-connection/README.md
         items:
+          - name: Двухфакторная аутентификация
+            href: ./settings/users/two-factor-authentication.md
           - name: Подключение по PPTP
             href: ./settings/users/authorization/vpn-connection/pptp.md
           - name: Подключение по IKEv2/IPsec
@@ -162,8 +164,6 @@ items:
         href: ./settings/monitor/snmp.md
       - name: Zabbix-агент
         href: ./settings/monitor/zabbix.md
-      - name: Netflow
-        href: ./settings/monitor/netflow.md
   - name: Правила трафика
     href: ./settings/access-rules/README.md
     items:
@@ -176,12 +176,10 @@ items:
             href: ./settings/access-rules/firewall-examples.md
           - name: Логирование
             href: ./settings/access-rules/logging.md
-          - name: Тестирование правил
+          - name: Проверка работы правил
             href: ./settings/access-rules/rule-check.md
           - name: Предварительная фильтрация
             href: ./settings/access-rules/pre-filtration.md
-          - name: Аппаратная фильтрация
-            href: ./settings/access-rules/hardware-filtering.md
       - name: Контент-фильтр
         href: ./settings/access-rules/content-filter/README.md
         items:
@@ -199,7 +197,7 @@ items:
             href: ./settings/access-rules/content-filter/block-page.md
       - name: Ограничение скорости
         href: ./settings/access-rules/shaper.md
-      - name: Антивирус
+      - name: Антивирусы веб-трафика
         href: ./settings/access-rules/antivirus.md
       - name: Предотвращение вторжений
         href: ./settings/access-rules/ips/README.md
@@ -214,6 +212,8 @@ items:
         href: ./settings/access-rules/ips/user-ip-exceptions.md
       - name: Объекты
         href: ./settings/access-rules/aliases.md
+      - name: Квоты
+        href: ./settings/access-rules/quotas.md
   - name: Профили безопасности
     href: ./settings/security-profiles/README.md
     items:
@@ -274,8 +274,6 @@ items:
             href: ./settings/services/proxy/proxy-single-interface.md
       - name: Обратный прокси
         href: ./settings/services/reverse-proxy.md
-      - name: ЛК/Портал SSL VPN
-        href: ./settings/services/user-personal-account.md
       - name: DNS
         href: ./settings/services/dns/README.md
         items:
@@ -310,8 +308,6 @@ items:
             href: ./settings/services/ipsec/site-to-site/ipsec-connection-kerio-control-to-utm.md
           - name: Подключение Keenetic по SSTP или IPsec
             href: ./settings/services/ipsec/site-to-site/keenetic-connection.md
-      - name: ГОСТ VPN
-        href: ./settings/services/gost-vpn.md
       - name: Сертификаты
         href: ./settings/services/certificates/README.md
         items:
@@ -321,8 +317,6 @@ items:
             href: ./settings/services/certificates/creating-ssl-sert-powershell.md
           - name: Создание сертификата c помощью openssl
             href: ./settings/services/certificates/creating-openssl-cert.md
-      - name: USB-токены
-        href: ./settings/services/usb_tokens.md
   - name: Отчеты и журналы
     href: ./settings/reports/README.md
     items:
@@ -330,10 +324,10 @@ items:
         href: ./settings/reports/traffic.md
       - name: Системный журнал
         href: ./settings/reports/logs.md
-      - name: Журнал веб-трафика
-        href: ./settings/reports/web-traffic-log.md
-      - name: Журнал трафика
-        href: ./settings/reports/traffic-log.md
+      - name: Журнал веб-доступа
+        href: ./settings/reports/web-logs.md
+      - name: Журнал антивируса
+        href: ./settings/reports/antivirus-logs.md
       - name: События безопасности
         href: ./settings/reports/security-events.md
       - name: Действия администраторов
@@ -414,8 +408,6 @@ items:
         href: ./settings/publishing-resources/portmapping.md
   - name: Интеграция NGFW и SkyDNS
     href: ./settings/skydns.md
-  - name: Полный цикл обработки трафика в Ideco NGFW
-    href: ./settings/traffic-path.md
   - name: Популярные инструкции и диагностика проблем 
     labeled: true
   - name: FAQ
@@ -501,12 +493,12 @@ items:
         href: ./recipes/problem-diagnosis/old-browser.md
       - name: Если соединение по IPsec не устанавливается
         href: ./recipes/problem-diagnosis/ipsec.md
-      - name: Ошибка 400 Bad Request Request Header Or Cookie Too Large при авторизации в браузерах
-        href: ./recipes/problem-diagnosis/maxtokensize.md
   - name: API
     labeled: true
   - name: Описание основных хендлеров
     href: ./api/description-of-handlers.md
+  - name: Мониторинг
+    href: ./api/monitor-api.md
   - name: Управление интеграцией с Active Directory
     href: ./api/active-directory-api.md
   - name: Управление интеграцией с ALD Pro
@@ -517,8 +509,6 @@ items:
     href: ./api/user-management-api.md
   - name: Управление Ideco Client
     href: ./api/ideco-client-api.md
-  - name: Мониторинг и журналы
-    href: ./api/monitor-api.md
   - name: Управление правилами трафика
     href: ./api/access-rules-api/README.md
     items:
@@ -532,6 +522,8 @@ items:
         href: ./api/access-rules-api/ips.md
       - name: Исключения
         href: ./api/access-rules-api/exceptions.md
+      - name: Квоты
+        href: ./api/access-rules-api/quotas.md
   - name: Управление профилями безопасности
     href: ./api/profiles-api.md
   - name: Управление сетевыми интерфейсами
@@ -546,7 +538,7 @@ items:
     href: ./api/logs-api.md
   - name: Центральная консоль
     href: ./api/cc-api.md
-  - name: Бэкапы и возврат к предыдущей версии
+  - name: Бэкапы
     href: ./api/backup-api.md
   - name: Почтовый релей
     href: ./api/mail-api/mail-api.md
@@ -570,7 +562,5 @@ items:
     labeled: true
   - name: Ideco NGFW 18.X
     href: ./changelog/ideco-utm/README.md
-  - name: ФСТЭК Ideco UTM 18.X
-    href: ./changelog/fstek/README.md
   - name: Ideco Center 18.X
     href: ./changelog/cc/README.md

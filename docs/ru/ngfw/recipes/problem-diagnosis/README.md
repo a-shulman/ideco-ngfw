@@ -21,7 +21,3 @@ description: >-
 [{#T}](ipsec.md)
 
 
-
-[{#T}](maxtokensize.md)
-
-
