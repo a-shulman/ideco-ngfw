@@ -14,7 +14,7 @@
 
 Необходимо добавить скрипт в сценарии, выполняемые [при входе в систему](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770908\(v=ws.11\)?redirectedfrom=MSDN).
 
-**UTMLogon\_script.ps1**
+**UTMLogon\_script.vbs**
 
 ```
 Dim IE
@@ -31,11 +31,15 @@ IE.Quit
 
 ## Разавторизация пользователя
 
-Удобно применять этот скрипт, когда один компьютер используют разные пользователи для посещения ресурсов сети Интернет. Данный скрипт можно скачать из веб-интерфейса, авторизовавшись под пользователем, после включения **веб-авторизации** в разделе **Пользователи -> Авторизация**
+Удобно применять этот скрипт, когда один компьютер используют разные пользователи для посещения ресурсов сети Интернет. Данный скрипт можно скачать из веб-интерфейса, нажав кнопку **Скачать скрипт для разавторизации**. Для этого в разделе **Пользователи -> Авторизация**, установите галку **Веб-аутентификация**:
 
-Для работы разавторизации пользователя необходима установка сертификата сервера в качестве доверенного корневого центра сертификации на компьютеры пользователей. Можно сделать это локально или через групповые политики домена, как описано в инструкции.
+![](../../../../_images/daw-authentication.png)
 
-Также необходимо отключить предупреждение о несоответствии адреса сертификата в свойствах Internet Explorer.
+Для работы скрипта разавторизации пользователя необходима установка сертификата сервера в качестве доверенного корневого центра сертификации на компьютеры пользователей. Можно сделать это локально или через групповые политики домена, как описано в [инструкции](../../access-rules/content-filter/filtering-https-traffic.md#dobavlenie-sertifikata-cherez-politiki-domena-microsoft-active-directory).
+
+Также необходимо отключить предупреждение о несоответствии адреса сертификата в свойствах Internet Explorer:
+
+![](../../../../_images/ie11.png)
 
 Этот параметр также можно установить через GPO, изменив параметр реестра:
 
@@ -46,22 +50,21 @@ HKEY\_CURRENT\_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings 
 **UTMLogout\_script.ps1**
 
 ```
-Set objLocator = CreateObject("WbemScripting.SWbemLocator")
-Set objWMIService = objLocator.ConnectServer(".", "root\cimv2")
+add-type @"
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+public class TrustAllCertsPolicy : ICertificatePolicy {
+    public bool CheckValidationResult(
+        ServicePoint srvPoint, X509Certificate certificate,
+        WebRequest request, int certificateProblem) {
+        return true;
+    }
+}
+"@
 
-Set HostNameSet = objWMIService.ExecQuery("Select * From Win32_NetworkAdapterConfiguration WHERE IPEnabled = True")
-Set objHTTP = CreateObject("WinHttp.WinHttpRequest.5.1")
-For Each objitem in HostNameSet
-     If NOT IsNULL(objItem.IPAddress)Then
-         For Each Ip in objItem.IpAddress
-             Url = "https://IP-адрес UTM:8443/monitor_backend/sessions/logout/" & Ip
-             objHTTP.Open "DELETE", Url, False
-             On Error Resume Next
-             objHTTP.send("")
-        Next
-     End If
-
-Next
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
+Invoke-RestMethod -Uri "https://<utm ip-adress>:8443/auth/sessions/logout" -Method Delete
 ```
 
 Вместо «UTM ip-address» нужно указать IP-адрес локального интерфейса Ideco UTM. При наличии на Ideco UTM нескольких локальных интерфейсов, необходимо указать IP-адрес локального интерфейса из той же подсети, что и компьютер пользователя.

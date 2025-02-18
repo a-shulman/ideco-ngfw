@@ -38,11 +38,11 @@
 
 Для примера разберем настройку файрвола разрешающую хосту 10.0.0.1 доступ к локальной сети.
 
-1. В консоли UTM \([доступ по SSH](../access-rules/admins.md)\) ввести команду:
+1\. В консоли UTM \([доступ по SSH](../access-rules/admins.md)\) ввести команду:
 
-   `mcedit /usr/bin/ideco-firewall`
+   `mcedit /usr/bin/ideco-firewall-static`
 
-2. Между строками:
+2\. Между строками:
 
    `iptables -A FORWARD -m state --state INVALID -j smart_drop`
 
@@ -54,8 +54,9 @@
 
    `iptables -A FORWARD -s 10.0.0.1 -j ACCEPT`
 
-3. Сохраните файл
-4. Перезагрузите Ideco UTM
+3\. Сохраните файл
+
+4\. Перезагрузите Ideco UTM
 
 {% note warning %}
 
