@@ -14,7 +14,7 @@
 
 Необходимо добавить скрипт в сценарии, выполняемые [при входе в систему](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770908\(v=ws.11\)?redirectedfrom=MSDN).
 
-**UTMLogon\_script.vbs**
+Перед началом настройки, создайте файл с именем **UTMLogon_script.vbs** и содержанием:
 
 ```
 Dim IE
@@ -33,7 +33,7 @@ IE.Quit
 
 Удобно применять этот скрипт, когда один компьютер используют разные пользователи для посещения ресурсов сети Интернет. Данный скрипт можно скачать из веб-интерфейса, нажав кнопку **Скачать скрипт для разавторизации**. Для этого в разделе **Пользователи -> Авторизация**, установите галку **Веб-аутентификация**:
 
-![](../../../../_images/daw-authentication.png)
+![](../../../../_images/daw-authentication.gif)
 
 Для работы скрипта разавторизации пользователя необходима установка сертификата сервера в качестве доверенного корневого центра сертификации на компьютеры пользователей. Можно сделать это локально или через групповые политики домена, как описано в [инструкции](../../access-rules/content-filter/filtering-https-traffic.md#dobavlenie-sertifikata-cherez-politiki-domena-microsoft-active-directory).
 
@@ -47,33 +47,27 @@ HKEY\_CURRENT\_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings 
 
 Далее необходимо добавить скрипт, выполняемый [при выходе пользователя из системы](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753583\(v=ws.11\)?redirectedfrom=MSDN):
 
-**UTMLogout\_script.ps1**
+1\. Откройте групповые политики (gpedit.msc) от имени администратора на устройстве пользователя;
 
-```
-add-type @"
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-public class TrustAllCertsPolicy : ICertificatePolicy {
-    public bool CheckValidationResult(
-        ServicePoint srvPoint, X509Certificate certificate,
-        WebRequest request, int certificateProblem) {
-        return true;
-    }
-}
-"@
+2\. Перейдите в **Конфигурации пользователя**, далее в **Конфигурации Windows**:
 
-[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
-[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
-Invoke-RestMethod -Uri "https://<utm ip-adress>:8443/auth/sessions/logout" -Method Delete
-```
+![](../../../../_images/script.png)
 
-Вместо «UTM ip-address» нужно указать IP-адрес локального интерфейса Ideco UTM. При наличии на Ideco UTM нескольких локальных интерфейсов, необходимо указать IP-адрес локального интерфейса из той же подсети, что и компьютер пользователя.
+4\. Нажмите **Сценарии (вход/выход из системы)**;
+
+5\. Откройте **Выход из системы** и перейдите на вкладку **Сценарии PowerShell**:
+
+![](../../../../_images/script1.png)
+
+6\. Нажмите **Добавить** и выберите скачанный файл **UTM_logout.ps1** нажав на кнопку **Обзор**:
+
+![](../../../../_images/script2.png)
+
+7\. Обновите групповые политики, выполнив команду `gpupdate /force` в консоли.
 
 ## Возможные ошибки при выполнении скриптов
 
 * Если в Internet Explorer появляется окно с текстом **Для получения доступа требуется аутентификация**, и авторизация происходит только при ручном переходе по ссылке на авторизацию, то переход в браузере на страницу авторизации может не произойти (он может быть ограничен настройками безопасности браузера). В таком случае, установите параметр **Активные сценарии** в Internet Explorer в значение **Включить**.
-
-![](../../../../_images/6586987.jpg)
 
 * Автоматически групповая политика обновляется не сразу после внесения изменений. Чтобы скрипты начали работать, обновите политику вручную командой\
   `gpupdate /force` на рабочей станции.

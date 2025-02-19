@@ -7,3 +7,35 @@ description: >-
 
 # Мониторинг
 
+
+[{#T}](authorized-users.md)
+
+
+
+[{#T}](logs.md)
+
+
+
+[{#T}](workload-schedule.md)
+
+
+
+[{#T}](traffic.md)
+
+
+
+[{#T}](telegram-bot.md)
+
+
+
+[{#T}](snmp.md)
+
+
+
+[{#T}](syslog.md)
+
+
+
+[{#T}](zabbix.md)
+
+

@@ -5,6 +5,10 @@
 
 
 
+[{#T}](connection-for-astra-linux.md)
+
+
+
 [{#T}](auto-connect.md)
 
 
@@ -22,5 +26,9 @@
 
 
 [{#T}](connection-for-high-sierra-macos.md)
+
+
+
+[{#T}](sstp-connecting-keenetic-wi-fi-routers.md)
 
 

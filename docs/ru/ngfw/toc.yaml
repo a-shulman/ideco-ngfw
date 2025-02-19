@@ -38,6 +38,9 @@ items:
     href: ./general/data-update-source-ideco-utm.md
   - name: Техническая поддержка
     href: ./general/technical-support.md
+    items:
+      - name: Информация о поддержке версий Ideco NGFW
+        href: ./general/support-period.md
   - name: Установка 
     labeled: true
   - name: Создание загрузочного USB flash диска
@@ -71,31 +74,36 @@ items:
             href: ./settings/users/authorization/web-authorization.md
           - name: Авторизация через Ideco Agent
             href: ./settings/users/authorization/ideco-agent.md
+          - name: IP и MAC авторизация
+            href: ./settings/users/authorization/IP-and-MAC-authorization/README.md
+            items:
+              - name: Авторизация по IP-адресу
+                href: ./settings/users/authorization/IP-and-MAC-authorization/ip.md
+              - name: Авторизация по MAC-адресу
+                href: ./settings/users/authorization/IP-and-MAC-authorization/mac.md
           - name: VPN-подключение
-            href: ./settings/services/vpn-tunnel-protocols/client-to-site/README.md
+            href: ./settings/users/authorization/vpn-connection/README.md
             items:
               - name: Ideco VPN-клиент
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/ideco-vpn-client.md
+                href: ./settings/users/authorization/vpn-connection/ideco-vpn-client.md
               - name: Подключение по PPTP
-                href: ./settings/users/authorization/pptp.md
+                href: ./settings/users/authorization/vpn-connection/pptp.md
               - name: Подключение по PPPoE
-                href: ./settings/users/authorization/pppoe.md
+                href: ./settings/users/authorization/vpn-connection/pppoe.md
               - name: IPSec IKEv2
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/ipsec-ikev2.md
+                href: ./settings/users/authorization/vpn-connection/ipsec-ikev2.md
               - name: SSTP
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/sstp.md
+                href: ./settings/users/authorization/vpn-connection/sstp.md
               - name: L2TP IPSec
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/l2tp-ipsec.md
+                href: ./settings/users/authorization/vpn-connection/l2tp-ipsec.md
               - name: Личный кабинет пользователя
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/user-lk.md
+                href: ./settings/users/authorization/vpn-connection/user-lk.md
               - name: Особенности маршрутизации и организации доступа
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/features.md
-              - name: Подключение по SSTP Wi-Fi роутеров Keenetic
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/sstp-connecting-keenetic-wi-fi-routers.md
+                href: ./settings/users/authorization/vpn-connection/features.md
               - name: Инструкция по запуску PowerShell скриптов
-                href: ./settings/services/vpn-tunnel-protocols/client-to-site/running-powershell-scripts.md
-          - name: Авторизация по IP-адресу
-            href: ./settings/users/authorization/ip.md
+                href: ./settings/users/authorization/vpn-connection/running-powershell-scripts.md
+          - name: Фиксированные IP-адреса VPN
+            href: ./settings/users/authorization/fixed-ip-vpn.md
       - name: Интеграция с Active Directory
         href: ./settings/users/active-directory/README.md
         items:
@@ -118,9 +126,6 @@ items:
         href: ./settings/monitor/authorized-users.md
       - name: Журналы
         href: ./settings/monitor/logs.md
-        items:
-          - name: Защита от brute-force атак
-            href: ./settings/monitor/fail2ban.md
       - name: График загруженности
         href: ./settings/monitor/workload-schedule.md
       - name: Монитор трафика
@@ -129,10 +134,10 @@ items:
         href: ./settings/monitor/telegram-bot.md
       - name: SNMP
         href: ./settings/monitor/snmp.md
-      - name: Интеграция с Zabbix
-        href: ./settings/monitor/zabbix.md
       - name: Syslog
         href: ./settings/monitor/syslog.md
+      - name: Интеграция с Zabbix
+        href: ./settings/monitor/zabbix.md
   - name: Правила трафика
     href: ./settings/access-rules/README.md
     items:
@@ -145,8 +150,6 @@ items:
         items:
           - name: Описание категорий контент-фильтра
             href: ./settings/access-rules/content-filter/custom-categories.md
-          - name: Настройка
-            href: ./settings/access-rules/content-filter/settings.md
           - name: Настройка фильтрации HTTPS
             href: ./settings/access-rules/content-filter/filtering-https-traffic.md
       - name: Ограничение скорости
@@ -157,7 +160,7 @@ items:
         href: ./settings/access-rules/ips.md
       - name: Объекты
         href: ./settings/access-rules/aliases.md
-      - name: Пользовательские квоты
+      - name: Квоты
         href: ./settings/access-rules/quotas.md
   - name: Сервисы
     href: ./settings/services/README.md
@@ -165,20 +168,24 @@ items:
       - name: Сетевые интерфейсы
         href: ./settings/connection-to-provider/README.md
         items:
-          - name: Внешний Ethernet
+          - name: Настройка Локального Ethernet
+            href: ./settings/connection-to-provider/local-ethernet.md
+          - name: Настройка Внешнего Ethernet
             href: ./settings/connection-to-provider/ethernet-connection.md
-          - name: Ethernet + PPTP
+          - name: Настройка подключения по PPTP
             href: ./settings/connection-to-provider/pptp-connection.md
-          - name: Ethernet + PPPoE
+          - name: Настройка подключения по L2TP
+            href: ./settings/connection-to-provider/l2tp-connection.md
+          - name: Настройка подключения по PPPoE
             href: ./settings/connection-to-provider/pppoe-connection.md
           - name: Подключение по 3G и 4G
             href: ./settings/connection-to-provider/3g-4g-connection.md
-          - name: Настройка подключения по L2TP
-            href: ./settings/connection-to-provider/l2tp-connection.md
       - name: Балансировка и резервирование
         href: ./settings/connection-to-provider/multiple-simultaneous-connections.md
       - name: Маршрутизация
         href: ./settings/services/routing.md
+      - name: OSPF
+        href: ./settings/services/ospf.md
       - name: Прокси
         href: ./settings/services/proxy/README.md
         items:
@@ -194,41 +201,36 @@ items:
         href: ./settings/services/reverse-proxy.md
       - name: DNS
         href: ./settings/services/dns.md
+        items:
+          - name: NextDNS
+            href: ./settings/services/nextdns.md
       - name: DHCP
         href: ./settings/services/dhcp.md
       - name: IPSec
-        href: ./settings/services/vpn-tunnel-protocols/site-to-site/ipsec/README.md
+        href: ./settings/services/ipsec/README.md
         items:
-              - name: Филиалы и главный офис
-                href: ./settings/services/vpn-tunnel-protocols/site-to-site/ipsec/branch-office-and-main-office.md
-              - name: Подключение устройств
-                href: ./settings/services/vpn-tunnel-protocols/site-to-site/ipsec/connecting-devices.md
-              - name: Подключение пользователей
-                href: ./settings/services/vpn-tunnel-protocols/site-to-site/ipsec/connecting-users.md
+          - name: Филиалы и главный офис
+            href: ./settings/services/ipsec/branch-office-and-main-office.md
+          - name: Устройства
+            href: ./settings/services/ipsec/devices.md
+          - name: Подключение офисов (site-to-site)
+            href: ./settings/services/ipsec/connect-offices/README.md
+            items:
+              - name: Подключение Ideco UTM и Mikrotik
+                href: ./settings/services/ipsec/connect-offices/site-to-site-ideco-mikrotik.md
+              - name: Подключение Cisco IOS к Ideco UTM по IPsec
+                href: ./settings/services/ipsec/connect-offices/connect-utm-to-cisco-via-ipsec.md
+              - name: Подключение pfSense к Ideco UTM по IPsec
+                href: ./settings/services/ipsec/connect-offices/ipsec-connection-pfsense-to-utm.md
+              - name: Подключение Kerio Control к Ideco UTM по IPsec
+                href: ./settings/services/ipsec/connect-offices/ipsec-connection-kerio-control-to-utm.md
+              - name: Подключение Keenetic по SSTP или IPsec
+                href: ./settings/services/ipsec/connect-offices/keenetic-connection.md
       - name: Сертификаты
         href: ./settings/services/certificates/README.md
         items:
           - name: Загрузка своего SSL-сертификата на сервер
             href: ./settings/services/certificates/upload-ssl-certificate-to-server.md
-      - name: Подключение офисов (site-to-site)
-        href: ./settings/services/vpn-tunnel-protocols/site-to-site/README.md
-        items:
-          - name: PPTP VPN
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/pptp-vpn.md
-          - name: Входящее подключение Cisco IOS к Ideco UTM по IPSec
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/connect-cisco-to-utm-via-ipsec.md
-          - name: Исходящее подключение Ideco UTM к Cisco IOS по IPSec
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/connect-utm-to-cisco-via-ipsec.md
-          - name: Входящее подключение pfSense к Ideco UTM по IPsec
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/ipsec-connection-pfsense-to-utm.md
-          - name: Исходящее подключение pfSense к Ideco UTM по IPsec
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/out-ipsec-connection-pfsense-to-utm.md
-          - name: Подключение Keenetic по SSTP
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/sstp-connection-keenetic.md
-          - name: Подключение Kerio Control к Ideco UTM по IPSec
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/ipsec-connection-kerio-control-to-utm.md
-          - name: Подключение Keenetic по IPSec
-            href: ./settings/services/vpn-tunnel-protocols/site-to-site/keenetic-connection-via-ipsec.md
   - name: Отчеты
     href: ./settings/reports/README.md
     items:
@@ -237,14 +239,20 @@ items:
       - name: Журнал авторизации
         href: ./settings/reports/authorization-log.md
   - name: Управление сервером
-    href: ./settings/server-management.md
+    href: ./settings/server-management/README.md
     items:
       - name: Администраторы
         href: ./settings/access-rules/admins.md
       - name: Кластеризация
         href: ./settings/cluster.md
+      - name: Автоматическое обновление сервера
+        href: ./settings/server-management/server-update.md
+      - name: Резервное копирование
+        href: ./settings/server-management/backup.md
       - name: Терминал
         href: ./settings/terminal.md
+      - name: Лицензия
+        href: ./settings/server-management/license-management.md
       - name: Дополнительно
         href: ./settings/services/additionally.md
   - name: Почтовый релей
@@ -269,6 +277,8 @@ items:
         items:
           - name: Переадресация почты
             href: ./settings/mail/mail-forwarding.md
+      - name: Почтовая очередь
+        href: ./settings/mail/mail-queue.md
       - name: Настройка почтовых клиентов
         href: ./settings/mail/configuring-email-clients.md
       - name: Схема фильтрации почтового трафика
@@ -298,6 +308,8 @@ items:
     href: ./service/backup.md
   - name: Режим удаленного помощника
     href: ./service/remote-assistant.md
+  - name: Разрешить интернет всем
+    href: ./service/razreshit-internet-vsem.md
   - name: Удаленный доступ для управления сервером
     href: ./service/remote-access-for-server-management.md
   - name: Личный кабинет
@@ -325,15 +337,15 @@ items:
           - name: Создание подключения в Mac OS
             href: ./recipes/popular-recipes/vpn/connection-for-high-sierra-macos.md
           - name: Подключение по SSTP Wi-Fi роутеров Keenetic
-            href: ./settings/services/vpn-tunnel-protocols/client-to-site/sstp-connecting-keenetic-wi-fi-routers.md
+            href: ./recipes/popular-recipes/vpn/sstp-connecting-keenetic-wi-fi-routers.md
       - name: Доступ в удаленные сети через роутер в локальной сети
         href: ./recipes/popular-recipes/access-to-remote-networks-through-a-router-in-the-local-network.md
       - name: Что делать если ваш IP попал в черные списки DNSBL
         href: ./recipes/popular-recipes/dnsbl-list.md
-      - name: Что делать если не работает Интернет
-        href: ./recipes/popular-recipes/what-to-do-if-the-internet-does-not-work.md
       - name: Как восстановить доступ к Ideco UTM
         href: ./recipes/popular-recipes/restore-access-to-ideco-utm.md
+      - name: Как восстановиться на прошлую версию после обновления Ideco UTM
+        href: ./recipes/popular-recipes/go-back.md
       - name: Проверка настроек фильтрации с помощью security ideco
         href: ./recipes/popular-recipes/security-ideco.md
       - name: Выбор аппаратной платформы для Ideco UTM
@@ -348,13 +360,16 @@ items:
         href: ./recipes/popular-recipes/authorization-astra-linux.md
       - name: Перенос данных и настроек на другой сервер
         href: ./recipes/popular-recipes/transferring-data-to-another-server.md
-  - name: Ссылки 
-    labeled: true
-  - name: Статьи по тегам
-    href: ./links/articles-by-tags.md
+  - name: Диагностика проблем
+    href: ./recipes/problem-diagnosis/README.md
+    items:
+      - name: Ошибка при открытии сайта ERR\_CONNECTION\_TIMED\_OUT или Не открывается сайт
+        href: ./recipes/problem-diagnosis/site-does-not-open.md
+      - name: Что делать если не работает Интернет
+        href: ./recipes/problem-diagnosis/internet-does-not-work.md
+      - name: Ошибка при авторизации "The browser is outdated"
+        href: ./recipes/problem-diagnosis/old-browser.md
   - name: changelog
     labeled: true
-  - name: Версия ФСТЭК Ideco UTM 11.Х
-    href: ./changelog/fstek-ideco-utm-11.x.md
-  - name: Версия Ideco UTM 11.X
-    href: ./changelog/versiya-ideco-utm-11.x.md
+  - name: Ideco UTM 12.X
+    href: ./changelog/ideco-utm/README.md
