@@ -1,7 +1,7 @@
 ---
 description: >-
-  Включение этого модуля даёт возможность передавать все системные сообщения
-  (syslog) Ideco UTM в сторонние коллекторы (Syslog Collector) или в
+  Включение этого модуля дает возможность передавать все системные сообщения
+  (syslog) Ideco NGFW в сторонние коллекторы (Syslog Collector) или в
   SIEM-системы.
 ---
 
@@ -16,7 +16,7 @@ description: >-
 
 ## Пересылка системных сообщений
 
-В качестве коллектора можно указывать любой локальный «серый» или публичный «белый» IP-адрес.
+В качестве коллектора можно указывать любой локальный "серый" или публичный "белый" IP-адрес.
 
 В поле **Порт** укажите любой порт из диапазона от 1 до 65535.
 
@@ -39,10 +39,10 @@ description: >-
 ```
 
 где:
-* **192.168.100.2** - ip-адрес UTM отправителя;
+* **192.168.100.2** - ip-адрес NGFW отправителя;
 * **Dec 14 15:48:38** - время получения события по Syslog;	
 * **timestamp:** 2022-12-14 10:48:34.808465+00:00 - время события в системе предотвращения вторжений, может не совпадать с временем получения события по Syslog;
-* **flow_id:** 1189034483406353- внутренний идентификатор системы предотвращения вторжений flow(сессии);
+* **flow_id:** 1189034483406353 - внутренний идентификатор системы предотвращения вторжений flow (сессии);
 * **in_iface:** seq:Leth1:3:m - содержит идентификатор входящего интерфейса;
 * **sensor_name:** suricata_debug - имя экземпляра системы предотвращения вторжений;
 * **event_type:** alert - тип события;
@@ -50,14 +50,14 @@ description: >-
 * **src_port:** 61790 - порт источника;
 * **src_country:** - название местоположения источника;
 * **src_country_code:** - ISO-код страны источника;
-* **src_session_uuid:** 7100d1c8-017f-4cbf-8b78-482839300211 - внутренний идентификатор сессии Ideco UTM источника;
+* **src_session_uuid:** 7100d1c8-017f-4cbf-8b78-482839300211 - внутренний идентификатор сессии Ideco NGFW источника;
 * **src_user_id:** 2 - идентификатор пользователя источника;
 * **src_user_name:** a.istomina- имя пользователя источника;
 * **dest_ip:** 192.168.100.2 - IP-адрес назначения;
 * **dest_port:** 53 - порт назначения;
 * **dest_country:** - название местоположения назначения;
 * **dest_country_code:** - ISO-код страны назначения;
-* **dest_session_uuid:** - внутренний идентификатор сессии Ideco UTM назначения;
+* **dest_session_uuid:** - внутренний идентификатор сессии Ideco NGFW назначения;
 * **dest_user_id:** -1 - идентификатор пользователя назначения;
 * **dest_user_name:** - имя пользователя назначения;
 * **proto:** UDP - протокол;
@@ -65,14 +65,15 @@ description: >-
 * **alert.signature:** Windows Telemetry - сообщение из сработавшего правила;
 * **alert.category:** Telemetry Windows - описание колонки в веб-интерфейсе События безопасности; \
   Соответствие *alert.category:* -> *alert.signature* описаны в [файле](https://static.ideco.ru/static/alert.category%20-%20alert.signature.pdf).
-* **alert.severity:** 3 - уровень угрозы, может принимать значения 1, 2, 3 и 256, где 1 - самый высокий уровень угрозы;| Обновления Cisco | Cisco Updates,Cisco Updates |
+* **alert.severity:** 3 - уровень угрозы, может принимать значения 1, 2, 3 и 256, где 1 - самый высокий уровень угрозы;
 
-Служебные поля результата анализа HTTP-трафика. Заполняются в случае, если в процессе анализа трафика был определен HTTP-протокол:
+Служебные поля результата анализа HTTP-трафика. Заполняются, если в процессе анализа трафика был определен HTTP-протокол:
 * **http.hostname:** - идентификатор хоста;
-* **http.url:** - url на который велось обращение;
+* **http.url:** - url, на который велось обращение;
 * **http.http_user_agent:** - информация, идентифицирующая HTTP-клиента.
   
-Служебные поля flow(сессии):
+Служебные поля flow (сессии):
+
 * **flow.pkts_toserver** :1 - количество пакетов, переданное от клиента к серверу;
 * **flow.pkts_toclient:** 0 - количество пакетов, переданное от сервера к клиенту;
 * **flow.bytes_toserver:** 73 - количество байт, переданное от клиента к серверу;
@@ -85,6 +86,7 @@ description: >-
 * **flow.alerted:** 0 - сгенерировался ли поток alert;
 
 Состояние флага [TCP flow(сессии)](https://ru.wikipedia.org/wiki/Transmission_Control_Protocol#%D0%A4%D0%BB%D0%B0%D0%B3%D0%B8_(%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D0%B5_%D0%B1%D0%B8%D1%82%D1%8B)): 
+
 * **tcp.tcp_flags:** - значение поля flags в заголовке TCP;
 * **tcp.tcp_flags_ts:** -  [timestamp флаги](https://www.atraining.ru/windows-network-tuning/#:~:text=TCP%20Timestamps%20–%20базовая%20низкоуровневая,не%20может%20высчитать%20данные%20значения);
 * **tcp.tcp_flags_tc:** - [флаг Truncated response](https://www.rfc-editor.org/rfc/rfc5966);
@@ -110,7 +112,7 @@ description: >-
 
 * **UDP** - протокол, принимает значения UDP, TCP, ICMP, GRE, ESP и AH;
 * **src** - IP-адрес источника;
-* **dst** -  IP-адрес назначения;
+* **dst** - IP-адрес назначения;
 * **sport** - порт источника для UDP и TCP;
 * **dport** - порт назначения для UDP и TCP;
 * **table** - таблица правил, в которой произошло логирование;
@@ -176,7 +178,7 @@ description: >-
 
 * **info** или **notice** - приоритет сообщения в логах в виде информационного сообщения или уведомления;
 * **779** - идентификатор процесса;
-* **INFO [utm-web-interface] Found 192.168.100.1 - 2023-01-12 11:02:14** - факт обнаружения правил безопасности с указанием группы правил ([utm-web-interface]), ip-адреса и дата/время. Список групп правил: 
+* **INFO [utm-web-interface] Found 192.168.100.1 - 2023-01-12 11:02:14** - факт обнаружения правил безопасности с указанием группы правил ([utm-web-interface]), ip-адреса и даты/времени. Список групп правил: 
   * utm-dovecot;
   * utm-postfix-connrate.conf;
   * utm-postscreen-prgrt.conf; 
@@ -197,6 +199,107 @@ description: >-
 
 {#top}
 
+{% cut "SSO-аутентификация" %}
+
+```
+2024-07-18T17:11:40+05:00 Ideco-NGFW CEF:0|Ideco|NGFW|17.0|0|syslog|0|deviceReceiptTime=1721304700 Severity=Notice DeviceProcessName=ideco-web-authd msg=Subnet 192.168.205.254/32 is authorized as user 'Sanek'. Connection made from None, type 'web'.
+```
+
+* `deviceReceiptTime` - время события в системе NGFW, может не совпадать с временем получения события по Syslog;
+* `Severity` - важность события (Emergency, Alert', Critical, Error, Warning, Notice, Informational, Debug);
+* `DeviceProcessName` - название службы NGFW (unit);
+* `192.168.205.254/32` - IP-адрес пользователя;
+* `Sanek` - логин пользователя;
+* `type 'web'` - тип авторизации веб.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация через журнал безопасности AD" %}
+
+```
+2024-07-18T17:20:22+05:00 Ideco-NGFW CEF:0|Ideco|NGFW|17.0|0|syslog|0|deviceReceiptTime=1721305222 Severity=Notice DeviceProcessName=ideco-auth-backend msg=Subnet 192.168.205.254/32 is authorized as user 'Sanek'. Connection made from None, type 'log'.
+```
+
+* `deviceReceiptTime` - время события в системе NGFW, может не совпадать с временем получения события по Syslog;
+* `Severity` - важность события (Emergency, Alert', Critical, Error, Warning, Notice, Informational, Debug);
+* `DeviceProcessName` - название службы NGFW (unit);
+* `192.168.205.254/32` - IP-адрес пользователя;
+* `Sanek` - логин пользователя;
+* `type 'log'` - тип авторизации через журнал безопасности AD.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Веб-авторизация" %}
+
+```
+2024-07-18T17:26:34+05:00 Ideco-NGFW CEF:0|Ideco|NGFW|17.0|0|syslog|0|deviceReceiptTime=1721305594 Severity=Notice DeviceProcessName=ideco-web-authd msg=User 'Sanek' has been successfully authorized in web interface from IP '192.168.205.254'.
+```
+
+* `deviceReceiptTime` - время события в системе NGFW, может не совпадать с временем получения события по Syslog;
+* `Severity` - важность события (Emergency, Alert', Critical, Error, Warning, Notice, Informational, Debug);
+* `DeviceProcessName` - название службы NGFW (unit);
+* `Sanek` - логин пользователя;
+* `192.168.205.254` - IP-адрес пользователя;
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация по IP" %}
+
+```
+2024-07-18T17:29:18+05:00 Ideco-NGFW CEF:0|Ideco|NGFW|17.0|0|syslog|0|deviceReceiptTime=1721305758 Severity=Notice DeviceProcessName=ideco-auth-backend msg=Subnet 192.168.205.254/32 is authorized as user 'Sanek'. Connection made from None, type 'ip'.
+```
+
+* `deviceReceiptTime` - время события в системе NGFW, может не совпадать с временем получения события по Syslog;
+* `Severity` - важность события (Emergency, Alert', Critical, Error, Warning, Notice, Informational, Debug);
+* `DeviceProcessName` - название службы NGFW (unit);
+* `192.168.205.254/32` - IP-адрес пользователя;
+* `Sanek` - логин пользователя;
+* `type 'ip'` - тип авторизации по IP.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация по MAC" %}
+
+```
+2024-07-18T17:32:26+05:00 Ideco-NGFW CEF:0|Ideco|NGFW|17.0|0|syslog|0|deviceReceiptTime=1721305946 Severity=Notice DeviceProcessName=ideco-auth-backend msg=Subnet 192.168.205.254/32 is authorized as user 'Sanek'. Connection made from None, type 'mac'.
+```
+
+* `deviceReceiptTime` - время события в системе NGFW, может не совпадать с временем получения события по Syslog;
+* `Severity` - важность события (Emergency, Alert', Critical, Error, Warning, Notice, Informational, Debug);
+* `DeviceProcessName` - название службы NGFW (unit);
+* `192.168.205.254/32` - IP-адрес пользователя;
+* `Sanek` - логин пользователя;
+* `type 'mac'` - тип авторизации по MAC.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация по подсети" %}
+
+```
+2024-07-18T20:52:27+05:00 Ideco-NGFW CEF:0|Ideco|NGFW|17.0|0|syslog|0|deviceReceiptTime=1721317947 Severity=Notice DeviceProcessName=ideco-auth-backend msg=Subnet 192.168.205.0/24 is authorized as user 'Sanek'. Connection made from None, type 'net'.
+```
+
+* `deviceReceiptTime` - время события в системе NGFW, может не совпадать с временем получения события по Syslog;
+* `Severity` - важность события (Emergency, Alert', Critical, Error, Warning, Notice, Informational, Debug);
+* `DeviceProcessName` - название службы NGFW (unit);
+* `192.168.205.0/24` - подсеть, по которой происходит авторизация;
+* `Sanek` - логин пользователя;
+* `type 'net'` - тип авторизации по подсети.
+
+{% endcut %}
+
+{#top}
+
 {% cut "Подключение по VPN" %}
 
 ```
@@ -210,6 +313,96 @@ description: >-
   *  **192.168.100.11** - ip-адрес, откуда установлено подключение;
   *  **pptp** - протокол.
 * **Subnet 10.128.187.17/32** - факт успешной авторизации с локальным ip-адресом.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Веб-авторизация" %}
+
+```
+192.168.100.2	Jan 12 11:20:06	1	local0	info		2023-01-12T11:20:05+05:00 ideco-ngfw ideco-web-authd 1665 - - Subnet 192.168.100.10/32 is authorized as user 'user'. Connection made from None, type 'web'
+```
+
+* `1665` - идентификатор процесса;
+* `192.168.100.10/32` - IP-адрес пользователя;
+* `user` - логин пользователя;
+* `type 'web'` - тип авторизации веб.
+
+{% endcut %}
+
+{#top}
+
+{% cut "SSO-аутентификация" %}
+
+```
+2024-07-18T16:59:55+05:00 Ideco-NGFW ideco-web-authd - - - Subnet 192.168.205.254/32 is authorized as user 'Sanek'. Connection made from None, type 'web'.
+```
+
+* `Ideco-NGFW` - название сервера;
+* `192.168.205.254/32` - IP-адрес пользователя;
+* `Sanek` - логин пользователя;
+* `type 'web'` - тип авторизации веб.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация через журнал безопасности AD" %}
+
+```
+2024-07-18T16:19:39+05:00 Ideco-NGFW ideco-auth-backend - - - Subnet 192.168.205.254/32 is authorized as user 'Sanek'. Connection made from None, type 'log'.
+```
+
+* `Ideco-NGFW` - название сервера;
+* `192.168.205.254/32` - IP-адрес пользователя;
+* `Sanek` - логин пользователя;
+* `type 'log'` - тип авторизации через журнал безопасности AD.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация по IP" %}
+
+```
+192.168.100.2	Jan 12 11:20:06	1	local0	info		2023-01-12T11:20:05+05:00 ideco-ngfw ideco-web-authd 1665 - - Subnet 192.168.100.49/32 is authorized as user 'user-1717140295.828113'. Connection made from None, type 'ip_permanent'.
+```
+
+* `1665` - идентификатор процесса;
+* `192.168.100.49/32` - IP-адрес пользователя;
+* `'user-1717140295.828113'` - логин пользователя;
+* `type 'ip_permanent'` - тип авторизации IP с постоянной авторизацией.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация по MAC" %}
+
+```
+192.168.100.2	Jan 12 11:20:06	1	local0	info		2023-01-12T11:20:05+05:00 ideco-ngfw ideco-auth-backend 3660 - - Subnet 192.168.100.10/32 is authorized as user 'user'. Connection made from None, type 'mac'.
+```
+
+* `3660` - идентификатор процесса;
+* `192.168.100.10/32` - IP-адрес пользователя;
+* `user` - логин пользователя;
+* `type 'mac'` - тип авторизации MAC.
+
+{% endcut %}
+
+{#top}
+
+{% cut "Авторизация по подсетям" %}
+
+```
+192.168.100.2	Jan 12 11:20:06	1	local0	info		2023-01-12T11:20:05+05:00 ideco-ngfw ideco-auth-backend 3660 - - Subnet 192.168.100.0/24 is authorized as user 'user'. Connection made from None, type 'net'.
+```
+
+* `3660` - идентификатор процесса;
+* `192.168.100.0/24` - подсеть пользователя;
+* `user` - логин пользователя;
+* `type 'net'` - тип авторизации подсеть.
 
 {% endcut %}
 

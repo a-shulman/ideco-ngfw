@@ -5,11 +5,11 @@
 
 
 
+[{#T}](connection-for-fedora.md)
+
+
+
 [{#T}](connection-for-astra-linux.md)
-
-
-
-[{#T}](auto-connect.md)
 
 
 

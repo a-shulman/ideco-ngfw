@@ -13,11 +13,7 @@
 
 
 
-[{#T}](two-factor-authentication.md)
-
-
-
-[{#T}](ideco-agent.md)
+[{#T}](ideco-client.md)
 
 
 
