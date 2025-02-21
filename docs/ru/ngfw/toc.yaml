@@ -28,43 +28,30 @@ navigation:
         text: 'Скачать PDF'
         url: 'https://ideco.ru/'
 items:
-  - name: Об Ideco NGFW
+  - name: Об Ideco UTM
     href: ./README.md
   - name: Общая информация 
     labeled: true
   - name: Лицензирование
     href: ./general/license.md
-  - name: Системные требования и источники обновления данных Ideco NGFW
+  - name: Источники обновлений данных Ideco UTM
     href: ./general/data-update-source-ideco-utm.md
   - name: Техническая поддержка
     href: ./general/technical-support.md
     items:
       - name: Информация о поддержке версий Ideco NGFW
         href: ./general/support-period.md
-  - name: Быстрый старт Ideco NGFW 
+  - name: Установка 
     labeled: true
-  - name: Рекомендации при первоначальной настройке
-    href: ./installation/tips-for-initial-setup.md
-  - name: MY.IDECO.RU
-    href: ./installation/initial-action-my-ideco.md
-  - name: Настройка программно-аппаратных комплексов Ideco NGFW
-    href: ./installation/ipmi-settings.md
-  - name: Подготовка к установке на устройство
-    href: ./installation/preparation-install.md
-    items:
-      - name: Настройка гипервизора
-        href: ./installation/specifics-of-hypervisor-settings.md
-      - name: Создание загрузочного USB-накопителя
-        href: ./installation/usb.md
-  - name: Установка
+  - name: Создание загрузочного USB flash диска
+    href: ./installation/usb.md
+  - name: Особенности настроек гипервизоров
+    href: ./installation/specifics-of-hypervisor-settings.md
+  - name: Процесс установки
     href: ./installation/installation-process.md
   - name: Первоначальная настройка
     href: ./installation/initial-setup.md
-  - name: Регистрация сервера
-    href: ./installation/server-registration.md
-  - name: Получение доступа в интернет
-    href: ./installation/get-internet.md
-  - name: Настройка Ideco NGFW 
+  - name: Настройка 
     labeled: true
   - name: Панель мониторинга
     href: ./settings/monitor-panel.md
@@ -74,10 +61,12 @@ items:
       - name: Учетные записи
         href: ./settings/users/user-tree/README.md
         items:
-          - name: Управление учетными записями и группами
+          - name: Управление пользователями
             href: ./settings/users/user-tree/user-management.md
           - name: Настройка пользователей
             href: ./settings/users/user-tree/customization-of-users.md
+          - name: Пользователи терминального сервера
+            href: ./settings/users/user-tree/terminal-server-users.md
       - name: Авторизация пользователей
         href: ./settings/users/authorization/README.md
         items:
@@ -87,60 +76,45 @@ items:
             href: ./settings/users/authorization/ip-and-mac-authorization/README.md
             items:
               - name: Авторизация по IP-адресу
-                href: ./settings/users/authorization/ip-and-mac-authorization/ip-authorization.md
+                href: ./settings/users/authorization/ip-and-mac-authorization/ip.md
               - name: Авторизация по MAC-адресу
-                href: ./settings/users/authorization/ip-and-mac-authorization/mac-authorization.md
+                href: ./settings/users/authorization/ip-and-mac-authorization/mac.md
           - name: Авторизация по подсетям
             href: ./settings/users/authorization/authorization-by-subnet.md
-          - name: Авторизация пользователей терминальных серверов
-            href: ./settings/users/authorization/terminal-server.md
-      - name: Двухфакторная аутентификация
-        href: ./settings/users/two-factor-authentication.md
       - name: VPN-подключение
         href: ./settings/users/authorization/vpn-connection/README.md
         items:
           - name: Подключение по PPTP
             href: ./settings/users/authorization/vpn-connection/pptp.md
+          - name: Подключение по PPPoE
+            href: ./settings/users/authorization/vpn-connection/pppoe.md
           - name: Подключение по IKEv2/IPsec
             href: ./settings/users/authorization/vpn-connection/ipsec-ikev2.md
           - name: Подключение по SSTP
             href: ./settings/users/authorization/vpn-connection/sstp.md
           - name: Подключение по L2TP/IPsec
             href: ./settings/users/authorization/vpn-connection/l2tp-ipsec.md
+          - name: Личный кабинет пользователя
+            href: ./settings/users/authorization/vpn-connection/user-lk.md
           - name: Особенности маршрутизации и организации доступа
             href: ./settings/users/authorization/vpn-connection/features.md
           - name: Инструкция по запуску PowerShell скриптов
             href: ./settings/users/authorization/vpn-connection/running-powershell-scripts.md
-      - name: Ideco Client
-        href: ./settings/users/ideco-client/README.md
-        items:
-          - name: Установка и настройка Ideco Client на Windows
-            href: ./settings/users/ideco-client/ideco-client-windows.md
-          - name: Установка и настройка Ideco Client на MacOS
-            href: ./settings/users/ideco-client/ideco-client-macos.md
-          - name: Установка и настройка Ideco Client на Linux
-            href: ./settings/users/ideco-client/ideco-client-linux.md
-          - name: Настройка Device VPN
-            href: ./settings/users/ideco-client/device-vpn.md
-          - name: Создание сертификатов для Device VPN
-            href: ./settings/users/ideco-client/device-vpn-cert.md
-      - name: Профили устройств
-        href: ./settings/users/hip-profiles.md
-      - name: Интеграция с Active Directory/Samba DC
+      - name: Двухфакторная аутентификация
+        href: ./settings/users/two-factor-authentication.md
+      - name: Ideco агент
+        href: ./settings/users/ideco-agent.md
+      - name: Интеграция с Active Directory
         href: ./settings/users/active-directory/README.md
         items:
           - name: Ввод сервера в домен
             href: ./settings/users/active-directory/entering-the-server-into-the-domain.md
-          - name: Аутентификация пользователей AD/Samba DC
+          - name: Авторизация пользователей Active Directory
             href: ./settings/users/active-directory/active-directory-user-authorization.md
           - name: Скрипты автоматической разавторизации
             href: ./settings/users/active-directory/auto-de-authorization-script.md
           - name: Импорт пользователей
             href: ./settings/users/active-directory/user-import.md
-      - name: Интеграция с RADIUS-сервером
-        href: ./settings/users/radius.md
-      - name: ALD Pro
-        href: ./settings/users/ald-pro.md
       - name: Обнаружение устройств
         href: ./settings/users/device-discovery.md
       - name: Wi-Fi-сети
@@ -148,10 +122,10 @@ items:
   - name: Мониторинг
     href: ./settings/monitor/README.md
     items:
-      - name: Сессии администраторов
-        href: ./settings/monitor/administrator-sessions.md
-      - name: Авторизованные пользователи
+      - name: Авторизованные пользователи и VPN пользователи
         href: ./settings/monitor/authorized-users.md
+      - name: Журналы
+        href: ./settings/monitor/logs.md
       - name: График загруженности
         href: ./settings/monitor/workload-schedule.md
       - name: Монитор трафика
@@ -160,79 +134,34 @@ items:
         href: ./settings/monitor/telegram-bot.md
       - name: SNMP
         href: ./settings/monitor/snmp.md
-      - name: Zabbix-агент
+      - name: Syslog
+        href: ./settings/monitor/syslog.md
+      - name: Zabbix агент
         href: ./settings/monitor/zabbix.md
-      - name: Netflow
-        href: ./settings/monitor/netflow.md
   - name: Правила трафика
     href: ./settings/access-rules/README.md
     items:
       - name: Файрвол
         href: ./settings/access-rules/firewall.md
-        items:
-          - name: Таблицы файрвола (FORWARD, DNAT, INPUT и SNAT)
-            href: ./settings/access-rules/firewall-tables.md
-          - name: Примеры создания правил файрвола
-            href: ./settings/access-rules/firewall-examples.md
-          - name: Логирование
-            href: ./settings/access-rules/logging.md
-          - name: Тестирование правил
-            href: ./settings/access-rules/rule-check.md
-          - name: Предварительная фильтрация
-            href: ./settings/access-rules/pre-filtration.md
-          - name: Аппаратная фильтрация
-            href: ./settings/access-rules/hardware-filtering.md
+      - name: Контроль приложений
+        href: ./settings/access-rules/application-control.md
       - name: Контент-фильтр
         href: ./settings/access-rules/content-filter/README.md
         items:
-          - name: Правила
-            href: ./settings/access-rules/content-filter/rules.md
           - name: Описание категорий контент-фильтра
             href: ./settings/access-rules/content-filter/custom-categories.md
-          - name: Морфологические словари
-            href: ./settings/access-rules/content-filter/morphological-dictionaries.md
-          - name: Настройки
-            href: ./settings/access-rules/content-filter/settings.md
           - name: Настройка фильтрации HTTPS
             href: ./settings/access-rules/content-filter/filtering-https-traffic.md
-          - name: Изменение страницы блокировки Контент-фильтра
-            href: ./settings/access-rules/content-filter/block-page.md
       - name: Ограничение скорости
         href: ./settings/access-rules/shaper.md
-      - name: Антивирус
+      - name: Антивирусы веб-трафика
         href: ./settings/access-rules/antivirus.md
       - name: Предотвращение вторжений
-        href: ./settings/access-rules/ips/README.md
-        items:
-          - name: Группы сигнатур
-            href: ./settings/access-rules/ips/rules.md
-          - name: Пользовательские сигнатуры
-            href: ./settings/access-rules/ips/custom-signatures.md
-          - name: Настройки
-            href: ./settings/access-rules/ips/settings.md
-      - name: Исключения
-        href: ./settings/access-rules/ips/user-ip-exceptions.md
+        href: ./settings/access-rules/ips.md
       - name: Объекты
         href: ./settings/access-rules/aliases.md
-  - name: Профили безопасности
-    href: ./settings/security-profiles/README.md
-    items:
-      - name: Web Application Firewall
-        href: ./settings/security-profiles/waf-profiles.md
-      - name: Контроль приложений
-        href: ./settings/security-profiles/application-control/README.md
-        items:
-          - name: Особенности создания профилей
-            href: ./settings/security-profiles/application-control/profile-creation.md
-          - name: Пример создания иерархической структуры
-            href: ./settings/security-profiles/application-control/structure.md
-          - name: Настройка фильтрации трафика, для которого в таблице FORWARD нет правил
-            href: ./settings/security-profiles/application-control/no-rules.md
-      - name: Предотвращение вторжений
-        href: ./settings/security-profiles/ips-profiles/README.md
-        items:
-          - name: Создание профилей и добавление в правила Файрвола
-            href: ./settings/security-profiles/ips-profiles/ips-profiles.md
+      - name: Квоты
+        href: ./settings/access-rules/quotas.md
   - name: Сервисы
     href: ./settings/services/README.md
     items:
@@ -241,8 +170,6 @@ items:
         items:
           - name: Настройка Локального Ethernet
             href: ./settings/services/connection-to-provider/local-ethernet.md
-          - name: Настройка Loopback-интерфейса
-            href: ./settings/services/connection-to-provider/loopback.md
           - name: Настройка Внешнего Ethernet
             href: ./settings/services/connection-to-provider/ethernet-connection.md
           - name: Настройка подключения по PPTP
@@ -261,89 +188,62 @@ items:
         href: ./settings/services/bgp.md
       - name: OSPF
         href: ./settings/services/ospf.md
-      - name: IGMP Proxy
-        href: ./settings/services/igmp.md
       - name: Прокси
         href: ./settings/services/proxy/README.md
         items:
-          - name: Исключения
-            href: ./settings/services/proxy/exclusions.md
-          - name: Настройка прямого подключения к прокси
-            href: ./settings/services/proxy/direct-connection-proxy.md
+          - name: Прокси сервер
+            href: ./settings/services/proxy/proxy-server.md
           - name: Настройка прокси с одним интерфейсом
-            href: ./settings/services/proxy/proxy-single-interface.md
+            href: ./settings/services/proxy/proxy-setting.md
+          - name: Исключить IP-адреса из обработки прокси сервером
+            href: ./settings/services/proxy/exclusions.md
+          - name: Подключение к внешним ICAP-сервисам
+            href: ./settings/services/proxy/icap.md
       - name: Обратный прокси
         href: ./settings/services/reverse-proxy.md
-      - name: ЛК/Портал SSL VPN
-        href: ./settings/services/user-personal-account.md
       - name: DNS
         href: ./settings/services/dns/README.md
         items:
-          - name: Внешние DNS-серверы
-            href: ./settings/services/dns/dns-external.md
-          - name: Master-зоны
-            href: ./settings/services/dns/master-zon.md
-          - name: Forward-зоны
-            href: ./settings/services/dns/forward-zon.md
-          - name: DDNS
-            href: ./settings/services/dns/ddns.md
+          - name: NextDNS
+            href: ./settings/services/dns/nextdns.md
       - name: DHCP-сервер
         href: ./settings/services/dhcp.md
-      - name: NTP-сервер
-        href: ./settings/services/ntp.md
       - name: IPsec
         href: ./settings/services/ipsec/README.md
         items:
-          - name: Подключение между двумя Ideco NGFW в туннельном режиме работы
-            href: ./settings/services/ipsec/site-to-site/ipsec-utm-to-utm-tunnel.md
-          - name: Подключение между двумя Ideco NGFW в транспортном режиме работы
-            href: ./settings/services/ipsec/site-to-site/ipsec-utm-to-utm-transport.md
-          - name: Подключение Ideco NGFW и Mikrotik
-            href: ./settings/services/ipsec/site-to-site/site-to-site-ideco-mikrotik.md
-          - name: Подключение MikroTik и Ideco NGFW по L2TP/IPsec
-            href: ./settings/services/ipsec/site-to-site/utm-to-mikrotik-vpn.md
-          - name: Подключение Cisco IOS и Ideco NGFW
-            href: ./settings/services/ipsec/site-to-site/connect-utm-to-cisco-via-ipsec.md
-          - name: Подключение pfSense к Ideco NGFW по IPsec
-            href: ./settings/services/ipsec/site-to-site/ipsec-connection-pfsense-to-utm.md
-          - name: Подключение Kerio Control и Ideco NGFW по IPsec
-            href: ./settings/services/ipsec/site-to-site/ipsec-connection-kerio-control-to-utm.md
-          - name: Подключение Keenetic по SSTP или IPsec
-            href: ./settings/services/ipsec/site-to-site/keenetic-connection.md
-      - name: ГОСТ VPN
-        href: ./settings/services/gost-vpn.md
+          - name: Филиалы и главный офис
+            href: ./settings/services/ipsec/branch-office-and-main-office.md
+          - name: Устройства
+            href: ./settings/services/ipsec/devices.md
+          - name: Подключение офисов (site-to-site)
+            href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/README.md
+            items:
+              - name: Подключение Ideco UTM и Mikrotik
+                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/site-to-site-ideco-mikrotik.md
+              - name: Подключение Cisco IOS к Ideco UTM по IPsec
+                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/connect-utm-to-cisco-via-ipsec.md
+              - name: Подключение pfSense к Ideco UTM по IPsec
+                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/ipsec-connection-pfsense-to-utm.md
+              - name: Подключение Kerio Control к Ideco UTM по IPsec
+                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/ipsec-connection-kerio-control-to-utm.md
+              - name: Подключение Keenetic по SSTP или IPsec
+                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/keenetic-connection.md
       - name: Сертификаты
         href: ./settings/services/certificates/README.md
         items:
-          - name: Загрузка SSL-сертификата на сервер
+          - name: Загрузка своего SSL-сертификата на сервер
             href: ./settings/services/certificates/upload-ssl-certificate-to-server.md
-          - name: Создание самоподписанного сертификата c помощью PowerShell
-            href: ./settings/services/certificates/creating-ssl-sert-powershell.md
-          - name: Создание сертификата c помощью openssl
-            href: ./settings/services/certificates/creating-openssl-cert.md
-      - name: USB-токены
-        href: ./settings/services/usb_tokens.md
-  - name: Отчеты и журналы
+  - name: Отчеты
     href: ./settings/reports/README.md
     items:
       - name: Трафик
         href: ./settings/reports/traffic.md
-      - name: Системный журнал
-        href: ./settings/reports/logs.md
-      - name: Журнал веб-трафика
-        href: ./settings/reports/web-traffic-log.md
-      - name: Журнал трафика
-        href: ./settings/reports/traffic-log.md
       - name: События безопасности
         href: ./settings/reports/security-events.md
-      - name: Действия администраторов
-        href: ./settings/reports/administrator-actions.md
       - name: Журнал авторизации
         href: ./settings/reports/authorization-log.md
       - name: Конструктор отчетов
         href: ./settings/reports/report-designer.md
-      - name: Syslog
-        href: ./settings/reports/syslog.md
   - name: Управление сервером
     href: ./settings/server-management/README.md
     items:
@@ -351,22 +251,21 @@ items:
         href: ./settings/server-management/admins.md
       - name: Центральная консоль
         href: ./settings/server-management/central-console.md
-      - name: VCE
-        href: ./settings/server-management/vce.md
-      - name: Кластеризация
-        href: ./settings/server-management/cluster/cluster.md
         items:
-          - name: Настройка кластера
-            href: ./settings/server-management/cluster/cluster-creation.md
-      - name: Обновления
+          - name: Политики и объекты
+            href: ./settings/server-management/policies-and-objects.md
+          - name: Сервисы
+            href: ./settings/server-management/services.md
+          - name: Управление сервером
+            href: ./settings/server-management/server-management.md
+      - name: Кластеризация
+        href: ./settings/server-management/cluster.md
+      - name: Автоматическое обновление сервера
         href: ./settings/server-management/server-update.md
-      - name: Бэкапы
+      - name: Резервное копирование
         href: ./settings/server-management/backup.md
       - name: Терминал
-        href: ./settings/server-management/terminal/README.md
-        items:
-          - name: Примеры использования утилит
-            href: ./settings/server-management/terminal/examples.md
+        href: ./settings/server-management/terminal.md
       - name: Лицензия
         href: ./settings/server-management/license-management.md
       - name: Дополнительно
@@ -381,14 +280,12 @@ items:
             href: ./settings/mail/mail-server-settings/web-mail.md
           - name: Настройка почтового релея
             href: ./settings/mail/mail-server-settings/mail-relay-settings.md
-          - name: Настройка почтового сервера
-            href: ./settings/mail/mail-server-settings/mail-server-settings.md
       - name: Расширенные настройки
         href: ./settings/mail/advanced-settings/README.md
         items:
           - name: Настройка домена у регистратора/держателя зоны
             href: ./settings/mail/advanced-settings/domain-settings-at-zone-holder.md
-      - name: Антиспам и антивирус
+      - name: Антиспам
         href: ./settings/mail/antispam.md
       - name: Правила
         href: ./settings/mail/regulations/README.md
@@ -412,10 +309,26 @@ items:
         href: ./settings/publishing-resources/configure-public-ip-on-computer-on-the-local-net.md
       - name: Портмаппинг (проброс портов, DNAT)
         href: ./settings/publishing-resources/portmapping.md
-  - name: Интеграция NGFW и SkyDNS
+  - name: Интеграция UTM и SkyDNS
     href: ./settings/skydns.md
-  - name: Полный цикл обработки трафика в Ideco NGFW
-    href: ./settings/traffic-path.md
+  - name: Обслуживание 
+    labeled: true
+  - name: Управление лицензиями
+    href: ./service/license-management.md
+  - name: Обновление сервера
+    href: ./service/server-update.md
+  - name: Регистрация сервера
+    href: ./service/server-registration.md
+  - name: Резервное копирование и восстановление данных
+    href: ./service/backup.md
+  - name: Режим удаленного помощника
+    href: ./service/remote-assistant.md
+  - name: Разрешить интернет всем
+    href: ./service/razreshit-internet-vsem.md
+  - name: Удаленный доступ для управления сервером
+    href: ./service/remote-access-for-server-management.md
+  - name: Личный кабинет
+    href: ./service/lk.md
   - name: Популярные инструкции и диагностика проблем 
     labeled: true
   - name: FAQ
@@ -424,47 +337,33 @@ items:
       - name: Инструкции по созданию VPN-подключений
         href: ./recipes/popular-recipes/vpn/README.md
         items:
-          - name: Создание VPN-подключения в Alt Linux
-            href: ./recipes/popular-recipes/vpn/connection-for-alt-linux.md
           - name: Создание VPN-подключения в Ubuntu
             href: ./recipes/popular-recipes/vpn/connection-for-ubuntu.md
-          - name: Создание VPN-подключения в Fedora
-            href: ./recipes/popular-recipes/vpn/connection-for-fedora.md
           - name: Создание подключения в Astra Linux
             href: ./recipes/popular-recipes/vpn/connection-for-astra-linux.md
-          - name: Создание подключения в Windows
+          - name: Автоматическое создание подключений
+            href: ./recipes/popular-recipes/vpn/auto-connect.md
+          - name: Создание подключения в Windows 10
             href: ./recipes/popular-recipes/vpn/connection-for-windows10.md
+          - name: Создание подключения в Windows 7
+            href: ./recipes/popular-recipes/vpn/connection-for-windows7.md
           - name: Создание VPN-подключения на мобильных устройствах
             href: ./recipes/popular-recipes/vpn/connection-for-mobile-devices.md
           - name: Создание подключения в Mac OS
             href: ./recipes/popular-recipes/vpn/connection-for-high-sierra-macos.md
           - name: Подключение по SSTP Wi-Fi роутеров Keenetic
             href: ./recipes/popular-recipes/vpn/sstp-connecting-keenetic-wi-fi-routers.md
-      - name: Подключение к сертифицированным Ideco EX и настройка Ideco NGFW
-        href: ./recipes/popular-recipes/ideco-ex.md
-      - name: Анализ трафика
-        href: ./recipes/popular-recipes/traffic-analysis.md
-      - name: Режим удаленного помощника
-        href: ./recipes/popular-recipes/remote-assistant.md
-      - name: Настройка LACP на Hyper-V
-        href: ./recipes/popular-recipes/lacp-hyperpv.md
-      - name: Разрешить интернет всем - диагностика неполадок
-        href: ./recipes/popular-recipes/allow-internet-all.md
-      - name: Удаленный доступ к серверу
-        href: ./recipes/popular-recipes/remote-access-for-server-management.md
-      - name: Тестирование оперативной памяти сервера
-        href: ./recipes/popular-recipes/memory-testing.md
-      - name: Как избавиться от асимметричной маршрутизации трафика
-        href: ./recipes/popular-recipes/access-to-remote-networks.md
+      - name: Доступ в удаленные сети через роутер в локальной сети
+        href: ./recipes/popular-recipes/access-to-remote-networks-through-a-router-in-the-local-network.md
       - name: Что делать если ваш IP попал в черные списки DNSBL
         href: ./recipes/popular-recipes/dnsbl-list.md
-      - name: Как восстановить доступ к Ideco NGFW
+      - name: Как восстановить доступ к Ideco UTM
         href: ./recipes/popular-recipes/restore-access-to-ideco-utm.md
-      - name: Как восстановиться на прошлую версию после обновления Ideco NGFW
+      - name: Как восстановиться на прошлую версию после обновления Ideco UTM
         href: ./recipes/popular-recipes/go-back.md
       - name: Проверка настроек фильтрации с помощью security ideco
         href: ./recipes/popular-recipes/security-ideco.md
-      - name: Выбор аппаратной платформы для Ideco NGFW
+      - name: Выбор аппаратной платформы для Ideco UTM
         href: ./recipes/popular-recipes/choosing-hardware-platform.md
       - name: Поддержка устаревших алгоритмов шифрования
         href: ./recipes/popular-recipes/legacy-encryption-support.md
@@ -472,105 +371,35 @@ items:
         href: ./recipes/popular-recipes/configuring-proxifier.md
       - name: Блокировка популярных ресурсов
         href: ./recipes/popular-recipes/blocking-popular-resources.md
-      - name: Настройка прозрачной авторизации на Astra Linux
+      - name: Настройка прозрачной авторизации на Astra linux
         href: ./recipes/popular-recipes/authorization-astra-linux.md
-      - name: Настройка автоматической веб-аутентификации на Ideco NGFW на Linux
-        href: ./recipes/popular-recipes/auto-authorization-linux.md
       - name: Перенос данных и настроек на другой сервер
         href: ./recipes/popular-recipes/transferring-data-to-another-server.md
-      - name: Порядок обработки веб-трафика в Ideco NGFW
-        href: ./recipes/popular-recipes/processing-order.md
-      - name: Интеграция Ideco NGFW и брокера сетевых пакетов DS Integrity NG
-        href: ./recipes/popular-recipes/integrity.md
-      - name: Настройка совместной работы ViPNet Координатор с Ideco NGFW
-        href: ./recipes/popular-recipes/vipnet-coordinator.md
-      - name: Блокировка чат-ботов
-        href: ./recipes/popular-recipes/block-chat-bot.md
-      - name: Таблица портов Ideco NGFW, доступных из локальной и внешних сетей
-        href: ./recipes/popular-recipes/open-ports.md
-      - name: Как Ideco Client осуществляет обработку запросов с редиректом на сервер Ideco NGFW
-        href: ./recipes/popular-recipes/ideco-client-processing.md
   - name: Диагностика проблем
     href: ./recipes/problem-diagnosis/README.md
     items:
       - name: Ошибка при открытии сайта ERR\_CONNECTION\_TIMED\_OUT или Не открывается сайт
         href: ./recipes/problem-diagnosis/site-does-not-open.md
-      - name: Что делать если не работает интернет
+      - name: Что делать если не работает Интернет
         href: ./recipes/problem-diagnosis/what-to-do-if-the-internet-does-not-work.md
       - name: Ошибка при авторизации "The browser is outdated"
         href: ./recipes/problem-diagnosis/old-browser.md
       - name: Если соединение по IPsec не устанавливается
         href: ./recipes/problem-diagnosis/ipsec.md
-      - name: Ошибка 400 Bad Request Request Header Or Cookie Too Large при авторизации в браузерах
-        href: ./recipes/problem-diagnosis/maxtokensize.md
-  - name: API
+  - name: API 
     labeled: true
-  - name: Описание основных хендлеров
+  - name: Описание хендлеров
     href: ./api/description-of-handlers.md
-  - name: Управление интеграцией с Active Directory
-    href: ./api/active-directory-api.md
-  - name: Управление интеграцией с ALD Pro
-    href: ./api/ald-pro-api.md
-  - name: Управление администраторами
-    href: ./api/admin-management-api.md
-  - name: Управление пользователями
-    href: ./api/user-management-api.md
-  - name: Управление Ideco Client
-    href: ./api/ideco-client-api.md
-  - name: Мониторинг и журналы
-    href: ./api/monitor-api.md
-  - name: Управление правилами трафика
-    href: ./api/access-rules-api/README.md
-    items:
-      - name: Файрвол
-        href: ./api/access-rules-api/firewall.md
-      - name: Контроль приложений
-        href: ./api/access-rules-api/application-control.md
-      - name: Контент-фильтр
-        href: ./api/access-rules-api/content-filter.md
-      - name: Предотвращение вторжений
-        href: ./api/access-rules-api/ips.md
-      - name: Исключения
-        href: ./api/access-rules-api/exceptions.md
-  - name: Управление профилями безопасности
-    href: ./api/profiles-api.md
-  - name: Управление сетевыми интерфейсами
-    href: ./api/interfaces-api.md
-  - name: Управление VPN
-    href: ./api/vpn-servers-api.md
-  - name: DHCP-сервер
-    href: ./api/dhcp-api.md
-  - name: DNS-сервер
-    href: ./api/dns-api.md
-  - name: Настройка удаленной передачи системных логов
-    href: ./api/logs-api.md
-  - name: Центральная консоль
-    href: ./api/cc-api.md
-  - name: Бэкапы и возврат к предыдущей версии
-    href: ./api/backup-api.md
-  - name: Почтовый релей
-    href: ./api/mail-api/mail-api.md
-    items:
-      - name: Расширенные настройки
-        href: ./api/mail-api/advanced-settings.md
-      - name: Антиспам и антивирус
-        href: ./api/mail-api/antispam-api.md
-      - name: Правила
-        href: ./api/mail-api/rules-api.md
-      - name: Почтовая очередь
-        href: ./api/mail-api/queue-api.md
   - name: Примеры использования
     href: ./api/examples/README.md
     items:
-      - name: Редактирование пользовательской категории контент-фильтра
-        href: ./api/examples/editing-a-custom-category.md
-      - name: Создание правила FORWARD
-        href: ./api/examples/creating-a-forward-rule.md
+          - name: Редактирование пользовательской категории контент-фильтра
+            href: ./api/examples/editing-a-custom-category.md
+          - name: Создание правила Forward
+            href: ./api/examples/creating-a-forward-rule.md
   - name: changelog
     labeled: true
-  - name: Ideco NGFW 18.X
+  - name: Ideco UTM 13.X
     href: ./changelog/ideco-utm/README.md
-  - name: ФСТЭК Ideco UTM 18.X
-    href: ./changelog/fstek/README.md
-  - name: Ideco Center 18.X
+  - name: Ideco Center 13.X
     href: ./changelog/cc/README.md

@@ -5,15 +5,19 @@
 
 
 
-[{#T}](connection-for-fedora.md)
-
-
-
 [{#T}](connection-for-astra-linux.md)
 
 
 
+[{#T}](auto-connect.md)
+
+
+
 [{#T}](connection-for-windows10.md)
+
+
+
+[{#T}](connection-for-windows7.md)
 
 
 

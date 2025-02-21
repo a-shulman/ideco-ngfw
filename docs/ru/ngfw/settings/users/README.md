@@ -13,19 +13,15 @@
 
 
 
-[{#T}](ideco-client/README.md)
+[{#T}](two-factor-authentication.md)
 
 
 
-[{#T}](hip-profiles.md)
+[{#T}](ideco-agent.md)
 
 
 
 [{#T}](active-directory/README.md)
-
-
-
-[{#T}](ald-pro.md)
 
 
 

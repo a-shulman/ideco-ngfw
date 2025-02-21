@@ -9,11 +9,7 @@
 
 
 
-[{#T}](vce.md)
-
-
-
-[{#T}](cluster/cluster.md)
+[{#T}](cluster.md)
 
 
 
@@ -25,7 +21,7 @@
 
 
 
-[{#T}](terminal/README.md)
+[{#T}](terminal.md)
 
 
 
