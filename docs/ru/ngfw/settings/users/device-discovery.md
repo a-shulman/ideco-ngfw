@@ -9,7 +9,7 @@ description: >-
 {% note tip %}
 
 Название службы раздела **Обнаружение устройств**: `ideco-netscan-backend`. \
-Список служб для других разделов доступен по [ссылке](../server-management/terminal.md).
+Список служб для других разделов доступен по [ссылке](../../../ngfw/settings/server-management/terminal.md).
 
 {% endnote %}
 

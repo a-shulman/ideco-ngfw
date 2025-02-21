@@ -19,7 +19,7 @@ password=пароль_пользователя
 
 5. Cкопируйте скрипт в систему и настройте автозагрузку:
 
-{% file src="../../scripts/auto-web-auth-linux.py";base64,Cg==" name="auto-web-auth-linux.py
+{% file src="../../scripts/auto-web-auth-linux.py";base64,Cg==" name="auto-web-auth-linux.py" }
 
 {% note warning %}
 

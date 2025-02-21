@@ -8,8 +8,8 @@ description: >-
 
 {% note tip %}
 
-Название службы раздела *Ограничение скорости*: `ideco-firewall-backend`. \
-Список имен служб для других разделов, доступен по [ссылке](../server-management/terminal.md).
+Название службы раздела *Ограничение скорости*: `ideco-shaper-backend`. \
+Список имен служб для других разделов доступен по [ссылке](../../../ngfw/settings/server-management/terminal.md).
 
 {% endnote %}
 

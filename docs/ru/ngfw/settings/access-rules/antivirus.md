@@ -2,8 +2,8 @@
 
 {% note tip %}
 
-Название службы раздела *Антивирусы веб-трафика*: `ideco-av-backend`. \
-Список имен служб для других разделов, доступен по [ссылке](../server-management/terminal.md).
+Название службы раздела _Антивирусы веб-трафика_: `ideco-av-backend`.\
+Список имен служб для других разделов, доступен по [ссылке](../../../ngfw/settings/server-management/terminal.md).
 
 {% endnote %}
 
@@ -27,7 +27,7 @@
 
 В случае правильной настройки браузер выведет ошибку доступа:
 
-<img src="../../../_images/антивирусы2 (3) (1).jpeg" alt="" data-size="original">
+<img src="/../_images/antivirus2" alt="" data-size="original">
 
 {% endcut %}
 

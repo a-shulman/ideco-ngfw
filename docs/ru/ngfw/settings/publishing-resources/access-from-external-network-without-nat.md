@@ -7,15 +7,11 @@
 
 Для примера разберем настройку Ideco UTM для доступа без NAT в следующей конфигурации сети:
 
-![](../../../_images/firewall_snat_3.png)
+![](../../../_images/access-from-external-network-without-nat.png)
 
 1\. Настройте сетевые интерфейсы в разделе **Сервисы -> Сетевые интерфейсы** на Ideco UTM:
 
-![](../../../_images/firewall_snat_2.png)
-
-**Итоговые правила файрвола выглядят так:**
-
-![](../../../_images/firewall-rule1.png)
+![](../../../_images/access-from-external-network-without-nat1.png)
 
 * **local** - интерфейс для доступа в пользовательскую локальную сеть;
 * **external** - интерфейс для доступа в пользовательскую внешнюю сеть пользователей.

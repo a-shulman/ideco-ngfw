@@ -39,7 +39,7 @@ DNS-сервер в Ideco UTM не доступен извне по сообра
 
 Пример записи приведен на скриншоте ниже:
 
-<img src="../../../../_images/master_zones_examples.png" alt="" data-size="original">
+<img src="/../_images/master_zones_examples.png" alt="" data-size="original">
 
 Несколько примеров записей в master-зону:
 

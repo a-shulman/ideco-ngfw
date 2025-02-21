@@ -17,10 +17,6 @@
 
 
 
-[{#T}](connection-for-windows7.md)
-
-
-
 [{#T}](connection-for-mobile-devices.md)
 
 

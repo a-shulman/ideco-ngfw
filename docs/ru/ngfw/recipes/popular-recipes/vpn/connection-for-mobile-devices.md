@@ -1,4 +1,4 @@
-# Инструкция по созданию VPN-подключения на мобильных устройствах
+# Создание VPN-подключения на мобильных устройствах
 
 {% note info %}
 
@@ -8,11 +8,11 @@
 
 *   В личном кабинете, введя логин/пароль пользователя:
 
-    <img align="left" src="../../../../_images/ubuntu16.png" alt="" data-size="original">
+    <img align="left" src="/../_images/ubuntu16.png" alt="" data-size="original">
     
-*   В разделе **Сервисы -> Сертификаты**:
+*   В разделе **Сервисы -> Сертификаты -> Загруженные сертификаты**:
 
-    <img align="left" src="../../../../_images/certificates2.png" alt="" data-size="original">
+    <img align="left" src="/../_images/certificates2.png" alt="" data-size="original">
 
 {% endnote %}
 
@@ -28,7 +28,7 @@
 
 1\. Нажмите **Добавить VPN профиль**:
 
-<img src="../../../../_images/strongswan2.png" alt="" data-size="original">
+<img src="/../_images/strongswan2.png" alt="" data-size="original">
 
 2\. Заполните поля:
 
@@ -37,11 +37,11 @@
 * Логин - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../_images/strongswan1.png" alt="" data-size="original">
+<img src="/../_images/strongswan1.png" alt="" data-size="original">
 
 3\. Нажмите **Сохранить** и кликните по созданному подключению:
 
-<img src="../../../../_images/strongswan.png" alt="" data-size="original">
+<img src="/../_images/strongswan.png" alt="" data-size="original">
 
 {% endcut %}
 
@@ -60,7 +60,7 @@
 * Имя пользователя - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../_images/android.png" alt="" data-size="original">
+<img src="/../_images/android.png" alt="" data-size="original">
 
 **Для IKEv2/IPsec MSCHAPv2:**
 
@@ -72,7 +72,7 @@
 * Имя пользователя - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../_images/android2.png" alt="" data-size="original">
+<img src="/../_images/android2.png" alt="" data-size="original">
 
 **Для L2TP/IPsec PSK:**
 
@@ -80,7 +80,7 @@
 * Адрес сервера - адрес VPN-сервера;
 * Общий ключ IPsec - значение строки **PSK** в разделе **Пользователи -> VPN-подключение -> Основное -> Подключение по L2TP/IPsec**.
 
-<img src="../../../../_images/android1.png" alt="" data-size="original">
+<img src="/../_images/android1.png" alt="" data-size="original">
 
 4\. Нажмите **Сохранить** и активируйте подключение.
 
@@ -92,11 +92,11 @@
 
 1\. Перейдите в раздел **Настройки -> Основные -> VPN**:
 
-<img src="../../../../_images/vpn-iphone.png" alt="" data-size="original">
+<img src="/../_images/vpn-iphone.png" alt="" data-size="original">
 
 2\. Нажмите **Добавить конфигурацию VPN**:
 
-<img src="../../../../_images/vpn-iphone1.png" alt="" data-size="original">
+<img src="/../_images/vpn-iphone1.png" alt="" data-size="original">
 
 3\. Выберите **Тип** подключения и заполните соответствующие поля:
 
@@ -109,7 +109,7 @@
 * Учетная запись - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../_images/vpn-iphone4.png" alt="" data-size="original">
+<img src="/../_images/vpn-iphone4.png" alt="" data-size="original">
 
 **Для L2TP:**
 
@@ -119,7 +119,7 @@
 * Пароль - пароль пользователя;
 * Общий ключ - значение строки **PSK** в разделе **Пользователи -> VPN-подключение -> Основное -> Подключение по L2TP/IPsec**.
 
-<img src="../../../../_images/vpn-iphone2.png" alt="" data-size="original">
+<img src="/../_images/vpn-iphone2.png" alt="" data-size="original">
 
 **Для IKEv2:**
 
@@ -129,13 +129,13 @@
 * Имя пользователя - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../_images/vpn-iphone3.png" alt="" data-size="original">
+<img src="/../_images/vpn-iphone3.png" alt="" data-size="original">
 
 4\. Нажмите **Готово**;
 
-5\. Для подключения перевести переключатель **Статус** вправо:
+5\. Переведите опцию **Статус** в положение **включен**:
 
-<img src="../../../../_images/vpn-iphone5.png" alt="" data-size="original">
+<img src="/../_images/vpn-iphone5.png" alt="" data-size="original">
 
 {% endcut %}
 
