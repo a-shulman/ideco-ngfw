@@ -46,7 +46,7 @@ description: >-
 
 {% note info %}
 
-Примеры подключения устройств описаны в статьях [Подключение офисов (site-to-site)](./podklyuchenie-ofisov-site-to-site/README.md).
+Примеры подключения устройств описаны в статьях [Подключение офисов (site-to-site)](../ipsec/site-to-site/README.md).
 
 {% endnote %}
 

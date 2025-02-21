@@ -28,7 +28,6 @@ Online-документация актуальна для версий Ideco UTM
 
 Скачать Ideco UTM можно в [личном кабинете](https://my.ideco.ru/#/login).
 
-Видеодокументация доступна на нашем [youtube-канале.](https://www.youtube.com/playlist?list=PLQJTQf4Vb3wD2bhYMhsdbgMXk4PnSfY10)
+Видеодокументация доступна на нашем [YouTube-канале](https://www.youtube.com/playlist?list=PLQJTQf4Vb3wD2bhYMhsdbgMXk4PnSfY10).
 
 {% endnote %}
-

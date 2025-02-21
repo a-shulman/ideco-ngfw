@@ -20,7 +20,7 @@ description: >-
 
 1. Настроить Интернет на Ideco UTM.
 2. [Привязать лицензию](../../service/license-management.md) к серверу.
-3. Перейти к диалогу с ботом: [@ideco_monitor_bot](https://telegram.im/@ideco_monitor_bot).
+3. Перейти к диалогу с ботом: [@ideco\_monitor\_bot](https://telegram.im/@ideco_monitor_bot).
 4. Написать боту `/start`.
 5. Скопировать код привязки к аккаунту.
 6. Перейти в раздел **Ideco Monitoring Bot** в [личном кабинете](https://my.ideco.ru/#/ideco-monitoring-bot).
@@ -36,7 +36,7 @@ description: >-
 {% cut "Настройка привязки Ideco Monitoring Bot к беседе" %}
 
 1. Настроить Интернет на Ideco NGFW.
-2. Привязать лицензию к серверу.
+2. [Привязать лицензию](../../service/license-management.md) к серверу.
 3. Перейти в группу и добавить пользователя @ideco_monitoring_bot.
 4. Написать `/start` в группе.
 5. Скопировать код привязки к аккаунту.
@@ -62,15 +62,15 @@ description: >-
 
 ## Настройка оповещений Ideco Monitоring Bot
 
-Настраивайте оповещения, которые приходят от Ideco Monitoring Bot, для каждой отдельной беседы.
+Настройте оповещения, которые приходят от Ideco Monitoring Bot, для каждой отдельной беседы.
 
 Для настройки оповещений:
-1. Перейдите в раздел настройки, нажав на иконку ![bot_notification_settings.svg](../../../_images/bot_notification_settings.svg).
+1. Перейдите в раздел настройки, нажав на иконку ![bot\_notification\_settings.svg](../../../_images/bot_notification_settings.svg).
 2. Проставьте галочки напротив тех уведомлений, которые хотели бы получать в выбранной беседе.
 
 {% note info %}
 
-Если требуется временно отключить отправку уведомлений, нажмите на иконку ![bot_notification_shutdown.svg](../../../_images/bot_notification_shutdown.svg). Оповещение перестанут приходить, пока снова не нажмете на эту иконку.
+Если требуется временно отключить отправку уведомлений, нажмите на иконку ![bot\_notification\_shutdown.svg](../../../_images/bot_notification_shutdown.svg). Оповещение перестанут приходить, пока снова не нажмете на эту иконку.
 
 {% endnote %}
 

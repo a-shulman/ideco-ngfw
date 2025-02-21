@@ -27,7 +27,7 @@ description: >-
 
 
 
-[{#T}](ips.md)
+[{#T}](ips/README.md)
 
 
 

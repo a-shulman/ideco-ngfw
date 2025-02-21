@@ -41,7 +41,7 @@ items:
     items:
       - name: Информация о поддержке версий Ideco NGFW
         href: ./general/support-period.md
-  - name: Установка 
+  - name: Быстрый старт 
     labeled: true
   - name: Создание загрузочного USB flash диска
     href: ./installation/usb.md
@@ -76,9 +76,9 @@ items:
             href: ./settings/users/authorization/ip-and-mac-authorization/README.md
             items:
               - name: Авторизация по IP-адресу
-                href: ./settings/users/authorization/ip-and-mac-authorization/ip.md
+                href: ./settings/users/authorization/ip-and-mac-authorization/ip-authorization.md
               - name: Авторизация по MAC-адресу
-                href: ./settings/users/authorization/ip-and-mac-authorization/mac.md
+                href: ./settings/users/authorization/ip-and-mac-authorization/mac-authorization.md
           - name: Авторизация по подсетям
             href: ./settings/users/authorization/authorization-by-subnet.md
       - name: VPN-подключение
@@ -122,7 +122,7 @@ items:
   - name: Мониторинг
     href: ./settings/monitor/README.md
     items:
-      - name: Авторизованные пользователи и VPN пользователи
+      - name: Авторизованные пользователи и VPN-пользователи
         href: ./settings/monitor/authorized-users.md
       - name: Журналы
         href: ./settings/monitor/logs.md
@@ -143,6 +143,11 @@ items:
     items:
       - name: Файрвол
         href: ./settings/access-rules/firewall.md
+        items:
+          - name: Таблицы файрвола (FORWARD, DNAT, INPUT и SNAT)
+            href: ./settings/access-rules/firewall-tables.md
+          - name: Логирование
+            href: ./settings/access-rules/logging.md
       - name: Контроль приложений
         href: ./settings/access-rules/application-control.md
       - name: Контент-фильтр
@@ -157,7 +162,18 @@ items:
       - name: Антивирусы веб-трафика
         href: ./settings/access-rules/antivirus.md
       - name: Предотвращение вторжений
-        href: ./settings/access-rules/ips.md
+        href: ./settings/access-rules/ips/README.md
+        items:
+          - name: Журнал
+            href: ./settings/access-rules/ips/log.md
+          - name: Правила
+            href: ./settings/access-rules/ips/rules.md
+          - name: Исключения из правил
+            href: ./settings/access-rules/ips/exceptions-rules.md
+          - name: Настройки
+            href: ./settings/access-rules/ips/settings.md
+      - name: Исключения
+        href: ./settings/access-rules/ips/user-ip-exceptions.md
       - name: Объекты
         href: ./settings/access-rules/aliases.md
       - name: Квоты
@@ -191,19 +207,25 @@ items:
       - name: Прокси
         href: ./settings/services/proxy/README.md
         items:
-          - name: Прокси сервер
-            href: ./settings/services/proxy/proxy-server.md
-          - name: Настройка прокси с одним интерфейсом
-            href: ./settings/services/proxy/proxy-setting.md
-          - name: Исключить IP-адреса из обработки прокси сервером
+          - name: Исключения
             href: ./settings/services/proxy/exclusions.md
-          - name: Подключение к внешним ICAP-сервисам
-            href: ./settings/services/proxy/icap.md
+          - name: Настройка прямого подключения к прокси
+            href: ./settings/services/proxy/direct-connection-proxy.md
+          - name: Настройка прокси с одним интерфейсом
+            href: ./settings/services/proxy/proxy-single-interface.md
       - name: Обратный прокси
         href: ./settings/services/reverse-proxy.md
       - name: DNS
         href: ./settings/services/dns/README.md
         items:
+          - name: Внешние DNS-серверы
+            href: ./settings/services/dns/dns-external.md
+          - name: Master-зоны
+            href: ./settings/services/dns/master-zon.md
+          - name: Forward-зоны
+            href: ./settings/services/dns/forward-zon.md
+          - name: DDNS
+            href: ./settings/services/dns/ddns.md
           - name: NextDNS
             href: ./settings/services/dns/nextdns.md
       - name: DHCP-сервер
@@ -216,23 +238,25 @@ items:
           - name: Устройства
             href: ./settings/services/ipsec/devices.md
           - name: Подключение офисов (site-to-site)
-            href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/README.md
+            href: ./settings/services/ipsec/site-to-site/README.md
             items:
               - name: Подключение Ideco UTM и Mikrotik
-                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/site-to-site-ideco-mikrotik.md
+                href: ./settings/services/ipsec/site-to-site/site-to-site-ideco-mikrotik.md
               - name: Подключение Cisco IOS к Ideco UTM по IPsec
-                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/connect-utm-to-cisco-via-ipsec.md
+                href: ./settings/services/ipsec/site-to-site/connect-utm-to-cisco-via-ipsec.md
               - name: Подключение pfSense к Ideco UTM по IPsec
-                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/ipsec-connection-pfsense-to-utm.md
+                href: ./settings/services/ipsec/site-to-site/ipsec-connection-pfsense-to-utm.md
               - name: Подключение Kerio Control к Ideco UTM по IPsec
-                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/ipsec-connection-kerio-control-to-utm.md
+                href: ./settings/services/ipsec/site-to-site/ipsec-connection-kerio-control-to-utm.md
               - name: Подключение Keenetic по SSTP или IPsec
-                href: ./settings/services/ipsec/podklyuchenie-ofisov-site-to-site/keenetic-connection.md
+                href: ./settings/services/ipsec/site-to-site/keenetic-connection.md
       - name: Сертификаты
         href: ./settings/services/certificates/README.md
         items:
-          - name: Загрузка своего SSL-сертификата на сервер
+          - name: Загрузка SSL-сертификата на сервер
             href: ./settings/services/certificates/upload-ssl-certificate-to-server.md
+          - name: Создание самоподписанного сертификата c помощью Powershell
+            href: ./settings/services/certificates/creating-ssl-sert-powershell.md
   - name: Отчеты
     href: ./settings/reports/README.md
     items:
@@ -250,14 +274,19 @@ items:
       - name: Администраторы
         href: ./settings/server-management/admins.md
       - name: Центральная консоль
-        href: ./settings/server-management/central-console.md
+        href: ./settings/server-management/central-console/README.md
         items:
           - name: Политики и объекты
-            href: ./settings/server-management/policies-and-objects.md
+            href: ./settings/server-management/central-console/policies-and-objects.md
+            items:
+              - name: Политики безопасности
+                href: ./settings/server-management/central-console/security-policies.md
+              - name: Объекты
+                href: ./settings/server-management/central-console/objects.md
           - name: Сервисы
-            href: ./settings/server-management/services.md
+            href: ./settings/server-management/central-console/services.md
           - name: Управление сервером
-            href: ./settings/server-management/server-management.md
+            href: ./settings/server-management/central-console/server-management.md
       - name: Кластеризация
         href: ./settings/server-management/cluster.md
       - name: Автоматическое обновление сервера
@@ -331,7 +360,7 @@ items:
     href: ./service/lk.md
   - name: Популярные инструкции и диагностика проблем 
     labeled: true
-  - name: FAQ
+  - name: FAQ 
     href: ./recipes/popular-recipes/README.md
     items:
       - name: Инструкции по созданию VPN-подключений
@@ -353,8 +382,8 @@ items:
             href: ./recipes/popular-recipes/vpn/connection-for-high-sierra-macos.md
           - name: Подключение по SSTP Wi-Fi роутеров Keenetic
             href: ./recipes/popular-recipes/vpn/sstp-connecting-keenetic-wi-fi-routers.md
-      - name: Доступ в удаленные сети через роутер в локальной сети
-        href: ./recipes/popular-recipes/access-to-remote-networks-through-a-router-in-the-local-network.md
+      - name: Как избавиться от асимметричной маршрутизации трафика
+        href: ./recipes/popular-recipes/access-to-remote-networks.md
       - name: Что делать если ваш IP попал в черные списки DNSBL
         href: ./recipes/popular-recipes/dnsbl-list.md
       - name: Как восстановить доступ к Ideco UTM
@@ -373,8 +402,20 @@ items:
         href: ./recipes/popular-recipes/blocking-popular-resources.md
       - name: Настройка прозрачной авторизации на Astra linux
         href: ./recipes/popular-recipes/authorization-astra-linux.md
+      - name: Настройка автоматической веб-аутентификации на Ideco UTM на Linux
+        href: ./recipes/popular-recipes/auto-authorization-linux.md
       - name: Перенос данных и настроек на другой сервер
         href: ./recipes/popular-recipes/transferring-data-to-another-server.md
+      - name: Порядок обработки веб-трафика в Ideco UTM
+        href: ./recipes/popular-recipes/processing-order.md
+      - name: Интеграция Ideco UTM и брокера сетевых пакетов DS Integrity NG
+        href: ./recipes/popular-recipes/integrity.md
+      - name: Настройка cовместной работы ViPNet Координатор с Ideco UTM
+        href: ./recipes/popular-recipes/vipnet-coordinator.md
+      - name: Блокировка чат-ботов
+        href: ./recipes/popular-recipes/block-chat-bot.md
+      - name: Таблица портов Ideco UTM, доступных из локальной и внешних сетей
+        href: ./recipes/popular-recipes/open-ports.md
   - name: Диагностика проблем
     href: ./recipes/problem-diagnosis/README.md
     items:
@@ -399,7 +440,9 @@ items:
             href: ./api/examples/creating-a-forward-rule.md
   - name: changelog
     labeled: true
-  - name: Ideco UTM 13.X
+  - name: Ideco UTM 14.Х
     href: ./changelog/ideco-utm/README.md
-  - name: Ideco Center 13.X
+  - name: ФСТЭК Ideco UTM 14.Х
+    href: ./changelog/fstek/README.md
+  - name: Ideco Center 14.Х
     href: ./changelog/cc/README.md
