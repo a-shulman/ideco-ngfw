@@ -6,7 +6,7 @@ description: >-
 
 # Подключение по 3G и 4G
 
-Сервер Ideco NGFW поддерживает некоторые модели USB-модемов, например, Huawei E8372. При подключении USB-модем будет отображаться в Ideco NGFW как новый ethernet-интерфейс.
+Начиная с версии Ideco UTM 7.9.0 сервер также поддерживает некоторые модели USB-модемов, например Huawei E8372. При подключении USB-модем будет отображаться в Ideco UTM как новый ethernet-интерфейс.
 
 {% note info %}
 
@@ -14,7 +14,7 @@ description: >-
 
 Пример вывода команды:
 
-![](../../../../_images/web-terminal4.png)
+![](../../../../_images/ethernet-connection3.png)
 
 {% endnote %}
 

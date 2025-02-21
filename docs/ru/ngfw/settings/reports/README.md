@@ -1,27 +1,11 @@
-# Отчеты и журналы
+# Отчеты
 
 
 [{#T}](traffic.md)
 
 
 
-[{#T}](logs.md)
-
-
-
-[{#T}](web-traffic-log.md)
-
-
-
-[{#T}](traffic-log.md)
-
-
-
 [{#T}](security-events.md)
-
-
-
-[{#T}](administrator-actions.md)
 
 
 
@@ -30,9 +14,5 @@
 
 
 [{#T}](report-designer.md)
-
-
-
-[{#T}](syslog.md)
 
 
