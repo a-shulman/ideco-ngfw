@@ -1,4 +1,4 @@
-# Инструкция по созданию подключения в Windows 10
+# Создание подключения в Windows 10
 
 {% note info %}
 
@@ -8,11 +8,11 @@
 
 *   В личном кабинете, введя логин/пароль пользователя:
 
-    <img align="left" src="../../../../_images/ubuntu16.png" alt="" data-size="original">
+    <img align="left" src="/../_images/ubuntu16.png" alt="" data-size="original">
     
-*   В разделе **Сервисы -> Сертификаты**:
+*   В разделе **Сервисы -> Сертификаты -> Загруженные сертификаты**:
 
-    <img align="left" src="../../../../_images/certificates2.png" alt="" data-size="original">
+    <img align="left" src="/../_images/certificates2.png" alt="" data-size="original">
 
 {% endnote %}
 
@@ -26,11 +26,11 @@
 
 1\. Кликните на иконке сетевого подключения в системном трее, и в появившемся окне выберите **Параметры сети и Интернет**:
 
-<img src="../../../../../_images/vpn-windows.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows.png" alt="" data-size="original">
 
 2\. Перейдите в раздел **VPN** и нажмите **Добавить VPN-подключение**:
 
-<img src="../../../../../_images/vpn-windows1.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows1.png" alt="" data-size="original">
 
 3\. Заполните соответствующие поля и нажмите **Сохранить**:
 
@@ -45,7 +45,7 @@
 * Имя пользователя - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../../_images/vpn-windows2.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows2.png" alt="" data-size="original">
 
 При настройке подключения по VPN из сети Интернет, в свойствах VPN-подключения нужно указать следующие параметры:
 
@@ -71,7 +71,7 @@
 * Имя пользователя - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../../_images/vpn-windows3.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows3.png" alt="" data-size="original">
 
 При настройке подключения по VPN из сети Интернет, в свойствах VPN-подключения нужно указать следующие параметры:
 
@@ -109,7 +109,7 @@
 * Имя пользователя - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../../_images/vpn-windows4.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows4.png" alt="" data-size="original">
 
 {% endcut %}
 
@@ -124,7 +124,7 @@
 * Имя пользователя - имя пользователя, которому разрешено подключение по VPN;
 * Пароль - пароль пользователя.
 
-<img src="../../../../../_images/vpn-windows5.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows5.png" alt="" data-size="original">
 
 При настройке подключения по VPN из сети Интернет, в свойствах VPN-подключения нужно указать следующие параметры:
 
@@ -138,11 +138,11 @@
 
 4\. Активируйте подключение, нажав правой кнопкой мыши по созданному подключению и выбрав **Подключиться**:
 
-<img src="../../../../../_images/vpn-windows6.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows6.png" alt="" data-size="original">
 
 5\. Для разрыва подключения нажмите **Отключиться**. Если нужно внести изменение в созданное подключение, нажмите **Дополнительные параметры -> Изменить**
 
-<img src="../../../../../_images/vpn-windows7.png" alt="" data-size="original">
+<img src="/../_images/vpn-windows7.png" alt="" data-size="original">
 
 ## Ошибки работы VPN-подключений
 
@@ -161,7 +161,7 @@
 * Нажмите правой кнопкой мыши по параметру именем **NegotiateDH2048\_AES256** и нажмите **Изменить**;
 * В строке **Значение** укажите значение `1`:
 
-<img src="../../../../../_images/windows-vpn.png" alt="" data-size="original">
+<img src="/../_images/windows-vpn.png" alt="" data-size="original">
 
 * Нажмите **OK**;
 * Перезагрузите Windows.
@@ -169,16 +169,16 @@
     Если параметра именем **NegotiateDH2048\_AES256** нет, то создайте его. Для этого:
 * Нажмите правой кнопкой мыши по свободному месту реестра в **Parameters** и выберите **Создать -> DWORD**:
 
-<img src="../../../../../_images/windows-vpn2.png" alt="" data-size="original">
+<img src="/../_images/windows-vpn2.png" alt="" data-size="original">
 
 * Задайте имя **NegotiateDH2048\_AES256**;
 * Нажмите правой кнопкой мыши по созданному файлу и выберите **Изменить**:
 
-<img src="../../../../../_images/windows-vpn3.png" alt="" data-size="original">
+<img src="/../_images/windows-vpn3.png" alt="" data-size="original">
 
 * В строке **Значение** укажите значение `1`:
 
-<img src="../../../../../_images/windows-vpn4.png" alt="" data-size="original">
+<img src="/../_images/windows-vpn4.png" alt="" data-size="original">
 
 * Нажмите **OK**.
 

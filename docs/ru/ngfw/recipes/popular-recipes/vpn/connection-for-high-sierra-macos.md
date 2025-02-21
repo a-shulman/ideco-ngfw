@@ -1,4 +1,4 @@
-# Инструкция по созданию подключения в Mac OS
+# Создание подключения в Mac OS
 
 {% note info %}
 
@@ -8,11 +8,11 @@
 
 *   В личном кабинете, введя логин/пароль пользователя:
 
-    <img align="left" src="../../../../_images/ubuntu16.png" alt="" data-size="original">
+    <img align="left" src="/../_images/ubuntu16.png" alt="" data-size="original">
     
 *   В разделе **Сервисы -> Сертификаты**:
 
-    <img align="left" src="../../../../_images/certificates.png" alt="" data-size="original">
+    <img align="left" src="/../_images/certificates.png" alt="" data-size="original">
 
 {% endnote %}
 
@@ -42,7 +42,7 @@
 * **Ethernet** - Например Wi-Fi;
 * **Имя службы** - имя подключения.
 
-<img src="../../../../_images/macos8.png" alt="" data-size="original">
+<img src="/../_images/macos8.png" alt="" data-size="original">
 
 4\. Нажмите **Создать** и заполните:
 
@@ -50,7 +50,7 @@
 * **Имя учетной записи** - логин;
 * **Пароль** - пароль.
 
-<img src="../../../../_images/macos9.png" alt="" data-size="original">
+<img src="/../_images/macos9.png" alt="" data-size="original">
 
 5\. Нажмите **Подключить**.
 
@@ -66,7 +66,7 @@
 
 2\. Установите флаг **Подключение по IKEv2/IPsec** и заполните поля **Домен**:
 
-<img src="../../../../_images/ipsec-ikev2-9-11.png" alt="" data-size="original">
+<img src="/../_images/ipsec-ikev2-9-11.png" alt="" data-size="original">
 
 **Создание подключения в Mac OS**
 
@@ -80,7 +80,7 @@
 * **Тип VPN** - IKEv2;
 * **Имя службы** - имя подключения.
 
-<img src="../../../../_images/macos7.png" alt="" data-size="original">
+<img src="/../_images/macos7.png" alt="" data-size="original">
 
 4\. Нажмите **Создать**;
 
@@ -89,7 +89,7 @@
 * **Адрес сервера** - адрес VPN-сервера;
 * **Удаленный ID** - продублируйте адрес VPN-сервера.
 
-<img src="../../../../_images/macos11.png" alt="" data-size="original">
+<img src="/../_images/macos11.png" alt="" data-size="original">
 
 6\. Выберите **Настройки аутентификации**;
 
@@ -98,7 +98,7 @@
 * **Имя пользователя** - имя пользователя, которому разрешено подключение по VPN;
 * **Пароль** - пароль пользователя.
 
-<img src="../../../../_images/macos12.png" alt="" data-size="original">
+<img src="/../_images/macos12.png" alt="" data-size="original">
 
 8\. Нажмите **ОК**;
 
@@ -118,13 +118,13 @@
 
 2\. Установите флаг **Подключение по L2TP/IPsec** и скопируйте **PSK**-ключ:
 
-<img src="../../../../_images/l2tp-on.png" alt="" data-size="original">
+<img src="/../_images/l2tp-on.png" alt="" data-size="original">
 
 **Создание подключения в Mac OS**
 
 1\. Перейдите в раздел **Системные настройки -> Сеть**:
 
-<img src="../../../../_images/macos.png" alt="" data-size="original">
+<img src="/../_images/macos.png" alt="" data-size="original">
 
 2\. Нажмите **Добавить** в левом нижнем углу (иконка ![](../../../../_images/macos2.png));
 
@@ -134,19 +134,19 @@
 * **Тип VPN** - L2TP через IPsec;
 * **Имя службы** - имя подключения.
 
-<img src="../../../../_images/macos1.png" alt="" data-size="original">
+<img src="/../_images/macos1.png" alt="" data-size="original">
 
 4\. Нажмите **Создать**;
 
 5\. Заполните **Адрес сервера** и **Имя учетной записи**:
 
-<img src="../../../../_images/macos3.png" alt="" data-size="original">
+<img src="/../_images/macos3.png" alt="" data-size="original">
 
 6\. Поставьте флаг на пункте **Показывать статус VPN в строке меню** и выберите **Настройки аутентификации**.
 
 7\. В **Аутентификации пользователя** заполните **Пароль** и в **Аутентификации компьютера** **Общий ключ (Shared Secret)**
 
-<img src="../../../../_images/macos4.png" alt="" data-size="original">
+<img src="/../_images/macos4.png" alt="" data-size="original">
 
 8\. Нажмите **ОК -> Применить**.
 
@@ -155,7 +155,7 @@
 * В левой верхней части экрана нажмите значок VPN-соединения (![](../../../../_images/macos5.png))
 *   Выберите _Подключить (имя службы, заданное в пункте 3)_:
 
-    <img src="../../../../_images/macos6.png" alt="" data-size="original">
+    <img src="/../_images/macos6.png" alt="" data-size="original">
 
 {% endcut %}
 

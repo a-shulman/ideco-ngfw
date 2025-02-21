@@ -9,7 +9,7 @@ description: >-
 {% note tip %}
 
 Название службы раздела **DHCP**: `ideco-dnsmasq`. \
-Список служб для других разделов доступен по [ссылке](../server-management/terminal.md).
+Список служб для других разделов доступен по [ссылке](../../../ngfw/settings/server-management/terminal.md).
 
 {% endnote %}
 
@@ -96,3 +96,5 @@ description: >-
 Содержит информацию об аренде IP-адресов для устройств.
 
 ![](../../../_images/dhcp5.png)
+
+Для привязки IP к MAC, нажмите на кнопку ![](../../../_images/icon-tie.png) в столбце **Управление**.

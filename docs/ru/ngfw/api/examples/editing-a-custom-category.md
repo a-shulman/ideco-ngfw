@@ -1,24 +1,27 @@
 # Редактирование пользовательской категории контент-фильтра
 
-Предполагается, что уже созданы и настроены: 
+Предполагается, что уже созданы и настроены:
+
 * пользователи;
 * пользовательская категория контент-фильтра (`users.id.3`);
 * правило контент-фильтра, в котором используются созданные пользователи и категория. 
 
 Через API требуется редактировать список URL в пользовательской категории (добавить `https://wrong-url.com`), в правила контент-фильтра и пользователей изменения не вносим.
 
-**1\.** Авторизуйте администратора: 
+1\. Авторизуйте администратора: 
 
 ```
-curl -k -c /tmp/cookie -b /tmp/cookie -X POST https://178.154.205.107:8443/web/auth/login --data '{"login": "логин", "password": "пароль", "recaptcha": "", "rest_path": "/"}'
+curl -k -c /tmp/cookie -b /tmp/cookie -X POST https://x.x.x.x:8443/web/auth/login --data '{"login": "логин", "password": "пароль", "rest_path": "/"}'
 ```
+
+* `x.x.x.x` - IP-адрес веб-интерфейса Ideco UTM.
 
 Ответ: статус 200.
 
-**2\.** Получите текущий список URL из пользовательских категории:
+2\. Получите текущий список URL из пользовательских категории:
 
 ```
-curl -k -c /tmp/cookie -b /tmp/cookie https://178.154.205.107:8443/content-filter/users_categories/users.id.3
+curl -k -c /tmp/cookie -b /tmp/cookie https://x.x.x.x:8443/content-filter/users_categories/users.id.3
 ```
 
 Ответ: статус 200.
@@ -30,10 +33,10 @@ curl -k -c /tmp/cookie -b /tmp/cookie https://178.154.205.107:8443/content-filte
 
 ```
 
-**3\.** Отредактируйте список URL:
+3\. Отредактируйте список URL:
 
 ```
-curl -k -c /tmp/cookie -b /tmp/cookie -X PUT https://178.154.205.107:8443/content-filter/users_categories/users.id.3 --data '{"name": "Запрещенные для бухгалтеров", "description": "комментарий", "urls": ["https://yandex.ru", "https://wrong-url.com"]}'
+curl -k -c /tmp/cookie -b /tmp/cookie -X PUT https://x.x.x.x:8443/content-filter/users_categories/users.id.3 --data '{"name": "Запрещенные для бухгалтеров", "description": "комментарий", "urls": ["https://yandex.ru", "https://wrong-url.com"]}'
 ```
 
 Ответ: статус 200.

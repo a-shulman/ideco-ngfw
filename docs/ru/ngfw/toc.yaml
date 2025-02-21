@@ -34,20 +34,29 @@ items:
     labeled: true
   - name: Лицензирование
     href: ./general/license.md
-  - name: Источники обновлений данных Ideco UTM
+  - name: Cистемные требования и источники обновления данных Ideco UTM
     href: ./general/data-update-source-ideco-utm.md
   - name: Техническая поддержка
     href: ./general/technical-support.md
     items:
+      - name: Режим удаленного помощника
+        href: ./general/remote-assistant.md
       - name: Информация о поддержке версий Ideco NGFW
         href: ./general/support-period.md
-  - name: Быстрый старт 
+  - name: Установка 
     labeled: true
-  - name: Создание загрузочного USB flash диска
-    href: ./installation/usb.md
-  - name: Особенности настроек гипервизоров
-    href: ./installation/specifics-of-hypervisor-settings.md
-  - name: Процесс установки
+  - name: Рекомендации при первоначальной настройке
+    href: ./installation/tips-for-initial-setup.md
+  - name: Личный кабинет my.ideco
+    href: ./installation/initial-action-my-ideco.md
+  - name: Подготовка к установке на устройство
+    href: ./installation/preparation-install.md
+    items:
+      - name: Настройка гипервизора
+        href: ./installation/specifics-of-hypervisor-settings.md
+      - name: Подготовка загрузочного диска
+        href: ./installation/usb.md
+  - name: Установка
     href: ./installation/installation-process.md
   - name: Первоначальная настройка
     href: ./installation/initial-setup.md
@@ -67,6 +76,8 @@ items:
             href: ./settings/users/user-tree/customization-of-users.md
           - name: Пользователи терминального сервера
             href: ./settings/users/user-tree/terminal-server-users.md
+          - name: Личный кабинет пользователя
+            href: ./settings/users/user-tree/user-cabinet.md
       - name: Авторизация пользователей
         href: ./settings/users/authorization/README.md
         items:
@@ -104,17 +115,19 @@ items:
         href: ./settings/users/two-factor-authentication.md
       - name: Ideco агент
         href: ./settings/users/ideco-agent.md
-      - name: Интеграция с Active Directory
+      - name: Интеграция с Active Directory/Samba DC
         href: ./settings/users/active-directory/README.md
         items:
           - name: Ввод сервера в домен
             href: ./settings/users/active-directory/entering-the-server-into-the-domain.md
-          - name: Авторизация пользователей Active Directory
+          - name: Авторизация пользователей AD/Samba DC
             href: ./settings/users/active-directory/active-directory-user-authorization.md
           - name: Скрипты автоматической разавторизации
             href: ./settings/users/active-directory/auto-de-authorization-script.md
           - name: Импорт пользователей
             href: ./settings/users/active-directory/user-import.md
+      - name: ALD Pro
+        href: ./settings/users/ald-pro.md
       - name: Обнаружение устройств
         href: ./settings/users/device-discovery.md
       - name: Wi-Fi-сети
@@ -124,8 +137,6 @@ items:
     items:
       - name: Авторизованные пользователи и VPN-пользователи
         href: ./settings/monitor/authorized-users.md
-      - name: Журналы
-        href: ./settings/monitor/logs.md
       - name: График загруженности
         href: ./settings/monitor/workload-schedule.md
       - name: Монитор трафика
@@ -134,8 +145,6 @@ items:
         href: ./settings/monitor/telegram-bot.md
       - name: SNMP
         href: ./settings/monitor/snmp.md
-      - name: Syslog
-        href: ./settings/monitor/syslog.md
       - name: Zabbix агент
         href: ./settings/monitor/zabbix.md
   - name: Правила трафика
@@ -153,10 +162,12 @@ items:
       - name: Контент-фильтр
         href: ./settings/access-rules/content-filter/README.md
         items:
-          - name: Описание категорий контент-фильтра
+          - name: Описание категорий Контент-фильтра
             href: ./settings/access-rules/content-filter/custom-categories.md
           - name: Настройка фильтрации HTTPS
             href: ./settings/access-rules/content-filter/filtering-https-traffic.md
+          - name: Изменение страницы блокировки Контент-фильтра
+            href: ./settings/access-rules/content-filter/block-page.md
       - name: Ограничение скорости
         href: ./settings/access-rules/shaper.md
       - name: Антивирусы веб-трафика
@@ -204,6 +215,8 @@ items:
         href: ./settings/services/bgp.md
       - name: OSPF
         href: ./settings/services/ospf.md
+      - name: IGMP Proxy
+        href: ./settings/services/igmp.md
       - name: Прокси
         href: ./settings/services/proxy/README.md
         items:
@@ -230,6 +243,8 @@ items:
             href: ./settings/services/dns/nextdns.md
       - name: DHCP-сервер
         href: ./settings/services/dhcp.md
+      - name: NTP-сервер
+        href: ./settings/services/ntp.md
       - name: IPsec
         href: ./settings/services/ipsec/README.md
         items:
@@ -237,8 +252,6 @@ items:
             href: ./settings/services/ipsec/branch-office-and-main-office.md
           - name: Устройства
             href: ./settings/services/ipsec/devices.md
-          - name: Подключение офисов (site-to-site)
-            href: ./settings/services/ipsec/site-to-site/README.md
             items:
               - name: Подключение Ideco UTM и Mikrotik
                 href: ./settings/services/ipsec/site-to-site/site-to-site-ideco-mikrotik.md
@@ -257,17 +270,25 @@ items:
             href: ./settings/services/certificates/upload-ssl-certificate-to-server.md
           - name: Создание самоподписанного сертификата c помощью Powershell
             href: ./settings/services/certificates/creating-ssl-sert-powershell.md
-  - name: Отчеты
+          - name: Создание сертификата c помощью openssl
+            href: ./settings/services/certificates/creating-openssl-cert.md
+  - name: Отчеты и журналы
     href: ./settings/reports/README.md
     items:
       - name: Трафик
         href: ./settings/reports/traffic.md
+      - name: Журнал событий
+        href: ./settings/reports/logs.md
       - name: События безопасности
         href: ./settings/reports/security-events.md
+      - name: Действия администраторов
+        href: ./settings/reports/administrator-actions.md
       - name: Журнал авторизации
         href: ./settings/reports/authorization-log.md
       - name: Конструктор отчетов
         href: ./settings/reports/report-designer.md
+      - name: Syslog
+        href: ./settings/reports/syslog.md
   - name: Управление сервером
     href: ./settings/server-management/README.md
     items:
@@ -276,6 +297,8 @@ items:
       - name: Центральная консоль
         href: ./settings/server-management/central-console/README.md
         items:
+          - name: Установка
+            href: ./settings/server-management/central-console/setup.md
           - name: Политики и объекты
             href: ./settings/server-management/central-console/policies-and-objects.md
             items:
@@ -285,6 +308,9 @@ items:
                 href: ./settings/server-management/central-console/objects.md
           - name: Сервисы
             href: ./settings/server-management/central-console/services.md
+            items:
+              - name: Сертификаты
+                href: ./settings/server-management/central-console/certificates/certificates.md
           - name: Управление сервером
             href: ./settings/server-management/central-console/server-management.md
       - name: Кластеризация
@@ -309,6 +335,8 @@ items:
             href: ./settings/mail/mail-server-settings/web-mail.md
           - name: Настройка почтового релея
             href: ./settings/mail/mail-server-settings/mail-relay-settings.md
+          - name: Настройка почтового сервера
+            href: ./settings/mail/mail-server-settings/mail-server-settings.md
       - name: Расширенные настройки
         href: ./settings/mail/advanced-settings/README.md
         items:
@@ -340,27 +368,20 @@ items:
         href: ./settings/publishing-resources/portmapping.md
   - name: Интеграция UTM и SkyDNS
     href: ./settings/skydns.md
-  - name: Обслуживание 
-    labeled: true
-  - name: Управление лицензиями
-    href: ./service/license-management.md
-  - name: Обновление сервера
-    href: ./service/server-update.md
-  - name: Регистрация сервера
-    href: ./service/server-registration.md
-  - name: Резервное копирование и восстановление данных
-    href: ./service/backup.md
-  - name: Режим удаленного помощника
-    href: ./service/remote-assistant.md
-  - name: Разрешить интернет всем
-    href: ./service/razreshit-internet-vsem.md
-  - name: Удаленный доступ для управления сервером
-    href: ./service/remote-access-for-server-management.md
-  - name: Личный кабинет
-    href: ./service/lk.md
   - name: Популярные инструкции и диагностика проблем 
     labeled: true
-  - name: FAQ 
+  - name: Обслуживание сервера
+    href: ./recipes/server-maintenance/README.md
+    items:
+      - name: Тестирование оперативной памяти сервера
+        href: ./recipes/server-maintenance/memory-testing.md
+      - name: Разрешить интернет всем - диагностика неполадок
+        href: ./recipes/server-maintenance/allow-internet-all.md
+      - name: Удаленный доступ к серверу
+        href: ./recipes/server-maintenance/remote-access-for-server-management.md
+      - name: Регистрация сервера
+        href: ./recipes/server-maintenance/server-registration.md
+  - name: FAQ
     href: ./recipes/popular-recipes/README.md
     items:
       - name: Инструкции по созданию VPN-подключений
@@ -374,8 +395,6 @@ items:
             href: ./recipes/popular-recipes/vpn/auto-connect.md
           - name: Создание подключения в Windows 10
             href: ./recipes/popular-recipes/vpn/connection-for-windows10.md
-          - name: Создание подключения в Windows 7
-            href: ./recipes/popular-recipes/vpn/connection-for-windows7.md
           - name: Создание VPN-подключения на мобильных устройствах
             href: ./recipes/popular-recipes/vpn/connection-for-mobile-devices.md
           - name: Создание подключения в Mac OS
@@ -415,7 +434,7 @@ items:
       - name: Блокировка чат-ботов
         href: ./recipes/popular-recipes/block-chat-bot.md
       - name: Таблица портов Ideco UTM, доступных из локальной и внешних сетей
-        href: ./recipes/popular-recipes/open-ports.md
+        href: ././recipes/popular-recipes/open-ports.md
   - name: Диагностика проблем
     href: ./recipes/problem-diagnosis/README.md
     items:
@@ -427,22 +446,22 @@ items:
         href: ./recipes/problem-diagnosis/old-browser.md
       - name: Если соединение по IPsec не устанавливается
         href: ./recipes/problem-diagnosis/ipsec.md
-  - name: API 
+  - name: API
     labeled: true
   - name: Описание хендлеров
     href: ./api/description-of-handlers.md
   - name: Примеры использования
     href: ./api/examples/README.md
     items:
-          - name: Редактирование пользовательской категории контент-фильтра
-            href: ./api/examples/editing-a-custom-category.md
-          - name: Создание правила Forward
-            href: ./api/examples/creating-a-forward-rule.md
+      - name: Редактирование пользовательской категории контент-фильтра
+        href: ./api/examples/editing-a-custom-category.md
+      - name: Создание правила Forward
+        href: ./api/examples/creating-a-forward-rule.md
   - name: changelog
     labeled: true
-  - name: Ideco UTM 14.Х
+  - name: Ideco UTM 15.X
     href: ./changelog/ideco-utm/README.md
-  - name: ФСТЭК Ideco UTM 14.Х
+  - name: ФСТЭК Ideco UTM 15.Х
     href: ./changelog/fstek/README.md
-  - name: Ideco Center 14.Х
+  - name: Ideco Center 15.Х
     href: ./changelog/cc/README.md

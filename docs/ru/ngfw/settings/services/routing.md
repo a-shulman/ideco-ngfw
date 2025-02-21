@@ -8,7 +8,7 @@ description: >-
 {% note tip %}
 
 Название службы раздела **Маршрутизация**: `ideco-routing-backend`. \
-Список служб для других разделов доступен по [ссылке](../server-management/terminal.md).
+Список служб для других разделов доступен по [ссылке](../../../ngfw/settings/server-management/terminal.md).
 
 {% endnote %}
 
@@ -76,7 +76,7 @@ description: >-
 
 {% cut "Задача: любой трафик в подсеть `150.1.0.0/16` направлять на шлюз `67.12.8.9`" %}
 
-<img src="../../../_images/route_123.png" alt="" data-size="original">
+<img src="/../_images/route_123.png" alt="" data-size="original">
 
 {% endcut %}
 
@@ -84,7 +84,7 @@ description: >-
 
 {% cut "Задача: весь трафик пользователей из группы Бухгалтерия направить через шлюз выбранного сетевого интерфейса" %}
 
-<img src="../../../_images/route_12345.png" alt="" data-size="original">
+<img src="/../_images/route_12345.png" alt="" data-size="original">
 
 Если настраивается маршрут в удаленную сеть через дополнительный роутер, расположенный в одной локальной сети с клиентами, то убедитесь, что нет "асимметричной маршрутизации" и роутер вынесен в DMZ. Подробнее в статье [Доступ в удаленные сети через роутер в локальной сети](../../recipes/popular-recipes/access-to-remote-networks.md)
 

@@ -5,7 +5,7 @@
 Например, IT-отдел предприятия предоставляет ресурсы для сотрудников в зоне `in.metacortex.ru` под именами `realm1.in.metacortex.ru`, `sandbox.metacortex.ru` и использует для этого DNS-сервер 10.10.10.10. \
 Для возможности доступа к этим ресурсам по доменным именам укажите forward-зону провайдера, как isp, и далее задайте DNS-сервер 10.10.10.10:
 
-<img src="../../../../_images/forward_zone.png" alt="" data-size="original">
+<img src="/../_images/forward_zone.png" alt="" data-size="original">
 
 {% note info %}
 

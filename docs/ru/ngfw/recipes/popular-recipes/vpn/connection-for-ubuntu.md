@@ -1,4 +1,4 @@
-# Инструкция по созданию VPN-подключения в Ubuntu
+# Создание VPN-подключения в Ubuntu
 
 {% note info %}
 
@@ -18,17 +18,17 @@
 
 Перед созданием подключения в Ubuntu перейдите в Ideco UTM, в раздел **Пользователи -> VPN-подключение -> Основное** и установите флаг **Подключение по PPTP**:
 
-<img src="../../../../_images/pptp.png" alt="" data-size="original">
+<img src="/../_images/pptp.png" alt="" data-size="original">
 
 **Создание подключения в Ubuntu**
 
 1\. Перейдите **Настройки -> Сети** и в строке **VPN** нажмите ![ok\_with\_icon.png](../../../../_images/ubuntu3.png):
 
-<img src="../../../../_images/ubuntu2.png" alt="" data-size="original">
+<img src="/../_images/ubuntu2.png" alt="" data-size="original">
 
 2\. В окне создания подключений выберите пункт **Туннельный протокол типа точка-точка (PPTP)**:
 
-<img src="../../../../_images/ubuntu4.1.png" alt="" data-size="original">
+<img src="/../_images/ubuntu4.1.png" alt="" data-size="original">
 
 3\. В разделе **Идентификация** заполните следующие поля:
 
@@ -38,7 +38,7 @@
 * **Пароль** - пароль пользователя. В правой части поля необходимо выбрать вариант хранения для пароля от VPN-соединения;
 * **NT-домен** - оставьте поле пустым.
 
-<img src="../../../../_images/ubuntu6.1.png" alt="" data-size="original">
+<img src="/../_images/ubuntu6.1.png" alt="" data-size="original">
 
 Рекомендуем нажать **Дополнительно** и установить флаги на пунктах:
 
@@ -48,13 +48,13 @@
 * **Использовать для данных сжатие Deflate** - использование алгоритма Deflate;
 * **Использовать сжатие заголовков TCP** - использование метода сжатия заголовков TCP/IP Вана Якобсона.
 
-<img src="../../../../_images/ubuntu8.1.png" alt="" data-size="original">
+<img src="/../_images/ubuntu8.1.png" alt="" data-size="original">
 
 4\. Нажмите **ОК** и **Добавить**.
 
-5\. Поставить переключатель созданного VPN-подключения в положение включен:
+5\. Переведите опцию созданного VPN-подключения в положение **включен**:
 
-<img src="../../../../_images/ubuntu9.1.png" alt="" data-size="original">
+<img src="/../_images/ubuntu9.1.png" alt="" data-size="original">
 
 {% endcut %}
 
@@ -68,17 +68,16 @@
 
 2\. Установите флаг **Подключение по IKEv2/IPsec** и заполните поле **Домен и IP-адрес**:
 
-<img src="../../../../_images/ipsec-ikev2-9-11.png" alt="" data-size="original">
+<img src="/../_images/ipsec-ikev2-9-11.png" alt="" data-size="original">
 
 3\. Скачайте корневой сертификат одним из способов:
 
 *   В личном кабинете, введя логин/пароль пользователя:
 
-    <img align="left" src="../../../../_images/ubuntu16.png" alt="" data-size="original">
+    <img src="/../_images/ubuntu16.png" alt="" data-size="original">
+* В разделе **Сервисы -> Сертификаты -> Загруженные сертификаты**:
 
-*   В разделе **Сервисы -> Сертификаты**:
-
-    <img align="left" src="../../../../_images/certificates2.png" alt="" data-size="original">
+    <img src="/../_images/certificates3.png" alt="" data-size="original">
 
 Корневой сертификат потребуется для настройки подключения рабочей станции пользователя, если не был получен корневой сертификат через Let\`s Encrypt. При необходимости перенесите файл сертификата на рабочую станцию. \
 Если для VPN-подключения используется сертификат выданный Let\`s Encrypt, то установка корневого сертификата на устройство не требуется.
@@ -99,11 +98,11 @@ sudo reboot
 
 3\. Перейдите в **Настройки -> Сети** и в строке **VPN** нажмите ![ok\_with\_icon.png](../../../../_images/ubuntu3.png):
 
-<img src="../../../../_images/ubuntu2.png" alt="" data-size="original">
+<img src="/../_images/ubuntu2.png" alt="" data-size="original">
 
 4\. В появившемся окне выберите **IPsec\IKEv2 (strongswan)**:
 
-<img src="../../../../_images/ubuntu13.png" alt="" data-size="original">
+<img src="/../_images/ubuntu13.png" alt="" data-size="original">
 
 5\. В разделе **Идентификация** и заполните следующие поля:
 
@@ -116,7 +115,7 @@ sudo reboot
 
 Установите флаг **Request an inner IP address** и нажмите **Добавить:**
 
-<img src="../../../../_images/ubuntu14.png" alt="" data-size="original">
+<img src="/../_images/ubuntu14.png" alt="" data-size="original">
 
 6\. Поставьте переключатель созданного VPN-подключения в положение включен.
 
@@ -132,7 +131,7 @@ sudo reboot
 
 2\. Установите флаг **Подключение по SSTP** и заполните поля **Домен** и **Порт**:
 
-<img src="../../../../_images/sstp-on.png" alt="" data-size="original">
+<img src="/../_images/sstp.png" alt="" data-size="original">
 
 **Создание подключения в Ubuntu**
 
@@ -151,11 +150,11 @@ sudo reboot
 
 3\. После окончания установки пакетов, перейдите в **Настройки -> Сети** и в строке **VPN** нажмите ![ok\_with\_icon.png](../../../../_images/ubuntu3.png):
 
-<img src="../../../../_images/ubuntu2.png" alt="" data-size="original">
+<img src="/../_images/ubuntu2.png" alt="" data-size="original">
 
 4\. В появившемся окне выберите **Туннельный протокол типа точка-точка (SSTP)**:
 
-<img src="../../../../_images/ubuntu10.png" alt="" data-size="original">
+<img src="/../_images/ubuntu10.png" alt="" data-size="original">
 
 5\. В разделе **Идентификация** и заполните следующие поля:
 
@@ -165,7 +164,7 @@ sudo reboot
 * **Пароль** - пароль пользователя. В правой части поля необходимо выбрать вариант хранения для пароля от VPN-соединения;
 * **NT-домен** - оставьте поле пустым.
 
-<img src="../../../../_images/ubuntu11.png" alt="" data-size="original">
+<img src="/../_images/ubuntu11.png" alt="" data-size="original">
 
 Рекомендуем нажать **Advanced** и установить флаги на пунктах:
 
@@ -176,7 +175,7 @@ sudo reboot
 
 6\. Нажмите **Добавить** и поставьте переключатель созданного VPN-подключения в положение включен:
 
-<img src="../../../../_images/ubuntu12.png" alt="" data-size="original">
+<img src="/../_images/ubuntu12.png" alt="" data-size="original">
 
 {% endcut %}
 
@@ -192,7 +191,7 @@ sudo reboot
 
 2\. Установите флаг **Подключение по L2TP/IPsec** и скопируйте **PSK**-ключ:
 
-<img src="../../../../_images/l2tp-on.png" alt="" data-size="original">
+<img src="/../_images/l2tp-on.png" alt="" data-size="original">
 
 **Создание подключения в Ubuntu**
 
@@ -217,11 +216,11 @@ sudo reboot
 
 4\. После окончания установки пакетов, перейдите в **Настройки -> Сети** и в строке **VPN** нажмите ![ok\_with\_icon.png](../../../../_images/ubuntu3.png):
 
-<img src="../../../../_images/ubuntu2.png" alt="" data-size="original">
+<img src="/../_images/ubuntu2.png" alt="" data-size="original">
 
 5\. В окне создания подключений по VPN выберите пункт **Layer 2 Tunneling Protocol (L2TP)**:
 
-<img src="../../../../_images/ubuntu5.png" alt="" data-size="original">
+<img src="/../_images/ubuntu5.png" alt="" data-size="original">
 
 6\. Во вкладке **Идентификация** и заполните следующие поля:
 
@@ -232,7 +231,7 @@ sudo reboot
 * **Пароль** - пароль пользователя. В правой части поля необходимо выбрать вариант хранения для пароля от VPN-соединения;
 * **NT-домен** - оставьте поле пустым.
 
-<img src="../../../../_images/ubuntu6.png" alt="" data-size="original">
+<img src="/../_images/ubuntu6.png" alt="" data-size="original">
 
 7\. Перейдите в **Настройки IPsec** и включите опцию **Enable IPsec tunnel to L2TP host**, чтобы активировалась возможность настраивать остальные параметры:
 
@@ -241,19 +240,19 @@ sudo reboot
 
 Раздел **Advanced** необязательный для заполнения.
 
-<img src="../../../../_images/ubuntu7.png" alt="" data-size="original">
+<img src="/../_images/ubuntu7.png" alt="" data-size="original">
 
 После окончания настройки **L2TP IPsec Options** нажмите **ОК**.
 
 8\. При необходимости перейдите в **Настройки РРР** и настройте раздел **Аутентификация**, **Шифрование и сжатие** и **Прочие**:
 
-<img src="../../../../_images/ubuntu8.png" alt="" data-size="original">
+<img src="/../_images/ubuntu8.png" alt="" data-size="original">
 
 После настройки **Параметры РРР** нажмите **ОК** и **Применить**.
 
 9\. Поставить переключатель созданного VPN-подключения в положение включен:
 
-<img src="../../../../_images/ubuntu9.png" alt="" data-size="original">
+<img src="/../_images/ubuntu9.png" alt="" data-size="original">
 
 {% endcut %}
 

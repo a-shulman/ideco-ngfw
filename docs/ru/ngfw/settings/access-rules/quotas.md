@@ -7,7 +7,7 @@ description: В Ideco UTM есть возможность использоват
 {% note tip %}
 
 Название службы раздела *Квоты*: `ideco-quotas-backend`; `systemd-quotacheck`. \
-Список имен служб для других разделов, доступен по [ссылке](../server-management/terminal.md).
+Список имен служб для других разделов, доступен по [ссылке](../../../ngfw/settings/server-management/terminal.md).
 
 {% endnote %}
 
@@ -38,11 +38,11 @@ description: В Ideco UTM есть возможность использоват
   * **Квартал** - начало кварталов: 1 января, 1 апреля, 1 июля, 1 октября.
 * Проверьте правильность введенных данных и нажмите на кнопку **Добавить**.
 
-<img src="../../../_images/qoutes.png" alt="" data-size="original">
+<img src="/../_images/qoutes.png" alt="" data-size="original">
 
 Управление квотами осуществляется с помощью кнопок в столбце **Управление**. Можно отключить или включить квоту, отредактировать или удалить.
 
-<img src="../../../_images/create-kvota.png" alt="" data-size="original">
+<img src="/../_images/create-kvota.png" alt="" data-size="original">
 
 ## Настройка пользователя и группы
 
@@ -54,11 +54,11 @@ description: В Ideco UTM есть возможность использоват
 
 Можно наследовать квоту от вышестоящей группы, или выбрать другую квоту, для этого потребуется деактивировать переключатель **Наследовать квоту от группы** и выбрать нужную квоту.
 
-<img src="../../../_images/qoutes-user.gif" alt="" data-size="original">
+<img src="/../_images/qoutes-user.gif" alt="" data-size="original">
 
-У группы **Все** имеется отдельный переключатель **Использовать квоты**. Данный параметр позволяет распространить использование квот для всех пользователей.
+У группы **Все** имеется отдельная опция **Использовать квоты**. Этот параметр позволяет распространить использование квот для всех пользователей:
 
-<img src="../../../_images/qoutas-all.gif" alt="" data-size="original">
+<img src="/../_images/qoutas-all.gif" alt="" data-size="original">
 
 {% endcut %}
 
@@ -76,7 +76,7 @@ description: В Ideco UTM есть возможность использоват
 
 Чтобы удалить квоту, необходимо снять ее со всех пользователей и групп. Иначе, при попытке удаления квоты появится окно, запрещающее данное действие. Данное окно представлено на скриншоте ниже:
 
-<img src="../../../_images/delete-kvota.png" alt="" data-size="original">
+<img src="/../_images/delete-kvota.png" alt="" data-size="original">
 
 {% endcut %}
 
