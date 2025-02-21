@@ -5,7 +5,7 @@
 
 
 
-[{#T}](central-console.md)
+[{#T}](central-console/README.md)
 
 
 

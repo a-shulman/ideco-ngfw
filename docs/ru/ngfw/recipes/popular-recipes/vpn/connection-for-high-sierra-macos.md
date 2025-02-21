@@ -12,7 +12,7 @@
     
 *   В разделе **Сервисы -> Сертификаты**:
 
-    <img align="left" src="../../../../_images/certificates2.png" alt="" data-size="original">
+    <img align="left" src="../../../../_images/certificates.png" alt="" data-size="original">
 
 {% endnote %}
 

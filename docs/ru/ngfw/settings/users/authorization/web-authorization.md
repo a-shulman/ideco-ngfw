@@ -3,9 +3,9 @@
 {% note info %}
 
 Поддерживаемые браузеры:
-* Google Chrome, версия >= 76;
-* Firefox, версия >= 71;
-* Safari, версия >= 13.
+* Google Chrome, версия >= 90;
+* Firefox, версия >= 78;
+* Safari, версия >= 14.
 
 {% endnote %}
 
