@@ -7,7 +7,6 @@ keys.txt
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-README.md
 .idea/*
 
 # Swap the comments on the following lines if you wish to use zero-installs
