@@ -1,7 +1,14 @@
 {
   "name": "docs_site",
   "version": "1.0.0",
-  "description": "",
+  "description": "1\\. Скачайте этот скрипт и разместите его в той же папке, где находится папка docsUTM.",
+  "repository": {
+    "type": "git",
+    "url": "https://stash.ideco.dev/scm/~a.shulman/docs_site.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -10,12 +17,6 @@
     "start": "node scripts/serve.js",
     "build:docs": "yfm --input docs --output docs-html --allow-custom-resources"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://stash.ideco.dev/scm/~a.shulman/docs_site.git"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@diplodoc/cli": "^4.37.0",
     "chokidar": "^3.5.3",
@@ -25,7 +26,7 @@
     "open": "^8.4.2",
     "parse5": "^7.1.2",
     "parse5-utils": "^2.0.0",
-    "serve-static": "^1.15.0",
-    "yfm": "^0.2.0"
-  }
+    "serve-static": "^1.15.0"
+  },
+  "devDependencies": {}
 }
