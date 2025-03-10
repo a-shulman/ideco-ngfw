@@ -1,34 +1,10 @@
 {
-  "name": "diplodoc-example",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "start": "node scripts/serve.js",
     "build:docs": "yfm --input docs --output docs-html --allow-custom-resources"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/a-shulman/diplodoc-example.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/a-shulman/diplodoc-example/issues"
-  },
-  "homepage": "https://github.com/a-shulman/diplodoc-example#readme",
   "dependencies": {
-    "@diplodoc/cli": "^4.45.2",
-    "express": "^4.21.0",
-    "parse5-utils": "^2.0.0",
-    "chokidar": "^3.5.3",
-    "glob": "^10.3.4",
-    "lodash": "^4.17.21",
-    "open": "^8.4.2",
-    "parse5": "^7.1.2",
-    "serve-static": "^1.15.0"
+    "@diplodoc/cli": "^4.55.1",
+    "http-server": "^14.1.1"
   }
 }
