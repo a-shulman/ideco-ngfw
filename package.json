@@ -1,1 +1,10 @@
-{"scripts":{"start":"node scripts/serve.js","build:docs":"yfm --input docs --output docs-html --allow-custom-resources"},"dependencies":{"@diplodoc/cli":"^4.55.1","http-server":"^14.1.1"}}
+{
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "build:docs": "yfm --input docs --output docs-html --allow-custom-resources"
+  },
+  "dependencies": {
+    "@diplodoc/cli": "^4.55.1",
+    "http-server": "^14.1.1"
+  }
+}
