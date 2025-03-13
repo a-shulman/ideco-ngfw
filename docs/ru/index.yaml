@@ -1,85 +1,341 @@
-#fullScreen: true
-blocks:
-  - type: "card-layout-block"
-    title: "Ideco NGFW"
-    description: "Межсетевой экран Ideco NGFW - современное программное решение для защиты
-  сетевого периметра, которое позволяет сделать доступ в интернет абсолютно
-  управляемым, безопасным и надежным."
-    children:  
-      - type: "basic-card"
-        url: "./about.md"
-        title: "Об Ideco NGFW"
-        icon: "https://storage.yandexcloud.net/teamdocs/image.avif"
-      - type: "basic-card"
-        url: "./start/preparation-install.md"
-        title: "Быстрый старт"
-        icon: "https://storage.yandexcloud.net/teamdocs/image.avif"
-  - type: "slider-new-block"
-    title: "Видеоинструкции"
-    children:
-      - type: "layout-item"
-        content:
-          title: "Создание пользовательских и корневых сертификатов"
-        media:
-          youtube: "https://rutube.ru/video/ed4bfaff00f6c0be4518d01d6cff0c38/"
-          previewImg: "_images/preview.png"
-        metaInfo:
-          - "one"
-          - "two"
-          - "three"
-        fullscreen: true
-      - type: "layout-item"
-        content:
-          title: "Загрузка пользовательского и корневого сертификата на NGFW"
-          text: "Dolor sit amet"
-        media:
-          youtube: "https://rutube.ru/video/14e677a43b85169ef770d794b6aa8536/"
-          previewImg: "_images/preview.png"
-        metaInfo:
-          - "one"
-          - "two"
-          - "three"
-        fullscreen: true
-      - type: "layout-item"
-        content:
-          title: "Настройка почтового релея в Ideco NGFW"
-          text: "Dolor sit amet"
-        media:
-          youtube: "https://rutube.ru/video/0fe9c2ba646f21fbe3ef3cbc7d052db0/"
-          previewImg: "_images/preview.png"
-        metaInfo:
-          - "one"
-          - "two"
-          - "three"
-        fullscreen: true
-      - type: "layout-item"
-        content:
-          title: "Настройка почтового сервера в Ideco NGFW"
-          text: "Dolor sit amet"
-        media:
-          youtube: "https://rutube.ru/video/5d3a7fa491a7bbc29b11b37cfdf1d334/"
-          previewImg: "_images/preview.png"
-        metaInfo:
-          - "one"
-          - "two"
-          - "three"
-        fullscreen: true
-    autoplay: 5000
-  - type: 'form-block'
-    textContent:
-      title: 'Помогите нам стать лучше!'
-      text: "Критику и предложения пишите в форму:\n"
-    title: 'Форма обратной связи'
-    formData:
-      yandex:
-        theme: 'default'
-        id: '61a4e639d4d24e0dbba36f5c'
-        customFormSection: 'cloud'
-    background:
-      dark:
-        style:
-          backgroundColor: '#262626'
-      light:
-        style:
-          backgroundColor: '#EFF2F8'
+# fullScreen: true
 
+blocks:
+
+### Header
+- type: header-block # Тип блока 
+  theme: 'dark' # Оставить темную тему, чтобы всегда был белый текст
+  verticalOffset: 's' # Разме
+  width: 'l' # Длина текста
+  title: 'Ideco NGFW' # Заголовок
+  description: 'Межсетевой экран Ideco NGFW - современное программное решение для защиты сетевого периметра, которое позволяет сделать доступ в интернет абсолютно управляемым, безопасным и надежным.' # Описание
+  buttons: # Кнопка
+    - text: "Об Ideco NGFW" # Заголовок кнопки
+      theme: 'action' # Тема (тип) кнопки
+      url: './about.md' # Редирект
+  background:
+    image: './_images/header-background.png' # Картинка фона
+
+### Card Layout 1
+
+- type: card-layout-block # Тип блока 
+  resetPaddings: false
+  animated: true # Анимации
+  children: 
+
+    - type: basic-card # Тип блока 
+      title: Лицензирование # Заголовок
+      text: В статье представлено описание  доступных в Ideco NGFW лицензий # Описание
+      links: # Ссылка
+        - text: Перейти # Название ссылки
+          url: https://example.com # Редирект
+          arrow: true # Добовляет стрелку (>) у ссылки
+          theme: normal # Тема (тип) кнопки
+
+    #### ####
+
+    - type: basic-card
+      title: Быстрый старт # Заголовок
+      text: В статье представлена пошаговая инструкция по настройке NGFW
+      links:
+        - text: Перейти
+          url: https://example.com # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: basic-card
+      title: REST API # Заголовок
+      text: Используйте REST API для автоматизации работы с NGFW
+      links:
+        - text: Перейти
+          url: https://example.com # Редирект
+          arrow: true
+          theme: normal
+
+
+### Card Layout 2
+
+- type: card-layout-block
+  title: Описание разделов # Заголовок
+  resetPaddings: false
+  animated: true # Анимации
+  children:
+
+    - type: background-card
+      title: Панель мониторинга # Заголовок
+      text: Просмотр информации о состоянии сервера # Описание
+      background:
+        light:
+          src: './_images/icon-light-monitor-panel.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-monitor-panel.png'  # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Пользователи # Заголовок
+      text: Создание и управление учетными записями, авторизация, Ideco Client и настройка VPN # Описание
+      background: 
+        light:
+          src: './_images/icon-light-users.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-users.png' # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com  # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Мониторинг # Заголовок
+      text: Мониторинг авторизованных пользователей и интерфейсов, отслеживание трафика в реальном времени # Описание
+      background:
+        light:
+          src: './_images/icon-light-monitor.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-monitor.png' # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com  # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Правила трафика # Заголовок
+      text: Настройка служб, которые определяют основные правила фильтрации трафика в Ideco NGFW # Описание
+      background:
+        light:
+          src: './_images/icon-light-access-rules.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-access-rules.png'  # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com  # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Профили безопасности # Заголовок
+      text: Фильтрация трафика и настройка политик безопасности с использованием профилей # Описание
+      background:
+        light:
+          src: './_images/icon-light-security-profiles.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-security-profiles.png'  # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Сервисы  # Заголовок
+      text: Настройка сетевых интерфейсов, маршрутизации, прокси-серверов, DNS-серверов, IPSec и центр сертификации  # Описание
+      background:
+        light:
+          src: './_images/icon-light-services.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-services.png'  # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com  # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Отчеты и журналы # Заголовок
+      text: Информация о доступных отчетах и журналах, которые помогут контролировать и анализировать работу сервера # Описание
+      background:
+        light:
+          src: './_images/icon-light-reports.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-reports.png' # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Управление сервером # Заголовок
+      text: Контроль над лицензиями, назначение администраторов, настройка VCE и кластеризации, резервное копирование и обновление NGFW # Описание
+      background:
+        light:
+          src: './_images/icon-light-server-management.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-server-management.png' # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com # Редирект
+          arrow: true
+          theme: normal
+
+    #### ####
+
+    - type: background-card
+      title: Почтовый релей # Заголовок
+      text: Настройка почтовой службы, включая веб-почту, проверку на наличие спама, почтовый релей и переадресацию # Описание
+      background:
+        light:
+          src: './_images/icon-light-mail.png' # Фон для светлой темы
+        dark:
+          src: './_images/icon-dark-mail.png' # Фон для темной темы
+      controlPosition: footer
+      links:
+        - text: Перейти
+          url: https://example.com # Редирект
+          arrow: true
+          theme: normal
+
+### Video Layout 1
+
+- type: "slider-new-block" # Тип блока 
+  title: "Видеоинструкции" # Заголовок
+  children:
+
+    - type: "layout-item" # Тип блока
+      content:
+        title: "Создание пользовательских и корневых сертификатов" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/ed4bfaff00f6c0be4518d01d6cff0c38/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+    #### ####
+
+    - type: "layout-item"
+      content:
+        title: "Загрузка пользовательского и корневого сертификата на NGFW" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/14e677a43b85169ef770d794b6aa8536/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+    #### ####
+
+    - type: "layout-item"
+      content:
+        title: "Настройка почтового релея в Ideco NGFW" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/0fe9c2ba646f21fbe3ef3cbc7d052db0/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+    #### ####
+    - type: "layout-item"
+      content:
+        title: "Настройка почтового сервера в Ideco NGFW" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/5d3a7fa491a7bbc29b11b37cfdf1d334/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+### Video Layout 2
+
+- type: "slider-new-block" # Тип блока 
+  title: "Вебинары" # Заголовок
+  children:
+
+    - type: "layout-item" # Тип блока
+      content:
+        title: "Создание пользовательских и корневых сертификатов" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/ed4bfaff00f6c0be4518d01d6cff0c38/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+    #### ####
+
+    - type: "layout-item"
+      content:
+        title: "Загрузка пользовательского и корневого сертификата на NGFW" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/14e677a43b85169ef770d794b6aa8536/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+    #### ####
+
+    - type: "layout-item"
+      content:
+        title: "Настройка почтового релея в Ideco NGFW" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/0fe9c2ba646f21fbe3ef3cbc7d052db0/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+    #### ####
+    - type: "layout-item"
+      content:
+        title: "Настройка почтового сервера в Ideco NGFW" # Заголовок
+      media:
+        youtube: "https://rutube.ru/video/5d3a7fa491a7bbc29b11b37cfdf1d334/" # Ссылка на рутуб
+        previewImg: "_images/preview.png" # Ссылка на картинку привью к видео
+      fullscreen: true
+
+### FAQ
+- type: questions-block # Тип блока
+  title: FAQ # Заголовок
+  links: 
+  - url: /security # Редирект
+    text: Больше # Название ссылки
+    theme: normal
+    arrow: true
+  text: Что-то можно написать. Если есть идеи # Описание
+  additionalInfo: Узнать способы обращения и график работы технической поддержки компании «Айдеко», которая предоставляется по подписке можно в <a href="https://docs.ideco.ru/general/technical-support">статье</a>. # Дополнительная информация
+  items: # Начало списка
+    - title: Утрачен пароль администратора, как его восстановить? # Заголовок
+      text: При утере пароля администратора можно его восстановить, имея физический доступ к серверу. #Описание
+      link: 
+        url: '#' # Редирект
+        text: Документация  # Название ссылки
+        theme: normal
+        arrow: true
+
+### Form
+
+- type: 'form-block'
+  textContent:
+    title: 'Помогите нам стать лучше!'
+    text: "Критику и предложения пишите в форму:\n"
+  title: 'Форма обратной связи'
+  formData:
+    yandex:
+      theme: 'default'
+      id: '61a4e639d4d24e0dbba36f5c'
+      customFormSection: 'cloud'
+  background:
+    dark:
+      style:
+        backgroundColor: '#262626'
+    light:
+      style:
+        backgroundColor: '#EFF2F8'
+        
