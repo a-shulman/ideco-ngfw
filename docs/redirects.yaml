@@ -1,0 +1,3 @@
+common:
+  - from: ad
+    to: ./start/get-internet
