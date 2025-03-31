@@ -1,0 +1,167 @@
+common:
+  - from: ad
+    to: ./ru/ngfw/settings/users/active-directory/README.md
+  - from: additionally
+    to: ./ru/ngfw/settings/server-management/additionally.md
+  - from: admins
+    to: ./ru/ngfw/settings/server-management/admins.md
+  - from: antivirus
+    to: ./ru/ngfw/settings/access-rules/antivirus.md
+  - from: application_control
+    to: ./ru/ngfw/settings/access-rules/application-control.md
+  - from: backup
+    to: ./ru/ngfw/settings/server-management/backup.md
+  - from: balancing_and_reserving
+    to: ./ru/ngfw/settings/services/multiple-simultaneous-connections.md
+  - from: certificate
+    to: ./ru/ngfw/settings/services/certificates/README.md
+  - from: custom_ssl
+    to: ./ru/ngfw/settings/services/certificates/upload-ssl-certificate-to-server.md
+  - from: cluster
+    to: ./ru/ngfw/settings/server-management/cluster.md
+  - from: content_filter
+    to: ./ru/ngfw/settings/access-rules/content-filter/README.md
+  - from: device_detection
+    to: ./ru/ngfw/settings/users/device-discovery.md
+  - from: dhcp
+    to: ./ru/ngfw/settings/services/dhcp.md
+  - from: firewall
+    to: ./ru/ngfw/settings/access-rules/firewall.md
+  - from: https_filtration
+    to: ./ru/ngfw/settings/access-rules/content-filter/filtering-https-traffic.md
+  - from: ids_ips
+    to: ./ru/ngfw/settings/access-rules/ips/README.md
+  - from: install
+    to: ./ru/ngfw/installation/installation-process.md
+  - from: ipsec
+    to: ./ru/ngfw/settings/services/ipsec/README.md
+  - from: network_interface
+    to: ./ru/ngfw/settings/services/connection-to-provider/README.md
+  - from: dns
+    to: ./ru/ngfw/settings/services/dns/README.md
+  - from: nextdns
+    to: ./ru/ngfw/settings/services/dns/nextdns.md
+  - from: object
+    to: ./ru/ngfw/settings/access-rules/aliases.md
+  - from: basic_settings
+    to: ./ru/ngfw/settings/mail/mail-server-settings/README.md
+  - from: powershell
+    to: ./ru/ngfw/settings/users/authorization/vpn-connection/running-powershell-scripts.md
+  - from: proxy
+    to: ./ru/ngfw/settings/services/proxy/README.md
+  - from: report
+    to: ./ru/ngfw/settings/reports/README.md
+  - from: reverse_proxy
+    to: ./ru/ngfw/settings/services/reverse-proxy.md
+  - from: routing
+    to: ./ru/ngfw/settings/services/routing.md
+  - from: server_registration
+    to: ./ru/ngfw/installation/server-registration.md
+  - from: reg
+    to: ./ru/ngfw/installation/server-registration.md
+  - from: server_update
+    to: ./ru/ngfw/settings/server-management/server-update.md
+  - from: snmp
+    to: ./ru/ngfw/settings/monitor/snmp.md
+  - from: shaper
+    to: ./ru/ngfw/settings/access-rules/shaper.md
+  - from: support
+    to: ./ru/ngfw/general/remote-assistant.md
+  - from: syslog
+    to: ./ru/ngfw/settings/reports/syslog.md
+  - from: telegram_bot
+    to: ./ru/ngfw/settings/monitor/telegram-bot.md
+  - from: terminal
+    to: ./ru/ngfw/settings/server-management/terminal/README.md
+  - from: user_authorization
+    to: ./ru/ngfw/settings/users/authorization/README.md
+  - from: user_management
+    to: ./ru/ngfw/settings/users/README.md
+  - from: user_quota
+    to: ./ru/ngfw/settings/access-rules/quotas.md
+  - from: vpn_authorization
+    to: ./ru/ngfw/settings/users/authorization/vpn-connection/README.md
+  - from: zabbix
+    to: ./ru/ngfw/settings/monitor/zabbix.md
+  - from: dashboard
+    to: ./ru/ngfw/settings/monitor-panel.md
+  - from: traffmon
+    to: ./ru/ngfw/settings/monitor/traffic.md
+  - from: logs
+    to: ./ru/ngfw/settings/reports/logs.md
+  - from: authorized
+    to: ./ru/ngfw/settings/monitor/authorized-users.md
+  - from: ospf
+    to: ./ru/ngfw/settings/services/ospf.md
+  - from: user_tree
+    to: ./ru/ngfw/settings/users/user-tree/README.md
+  - from: reports_designer
+    to: ./ru/ngfw/settings/reports/report-designer.md
+  - from: authorization_log
+    to: ./ru/ngfw/settings/reports/authorization-log.md
+  - from: terminal_server_auth
+    to: ./ru/ngfw/settings/users/authorization/terminal-server.md
+  - from: license_management
+    to: ./ru/ngfw/general/license.md
+  - from: advanced_settings
+    to: ./ru/ngfw/settings/mail/advanced-settings/README.md
+  - from: antispam_chapter
+    to: ./ru/ngfw/settings/mail/antispam.md
+  - from: rules
+    to: ./ru/ngfw/settings/mail/regulations/README.md
+  - from: mail_queue
+    to: ./ru/ngfw/settings/mail/mail-queue.md
+  - from: bgp
+    to: ./ru/ngfw/settings/services/bgp.md
+  - from: traffic
+    to: ./ru/ngfw/settings/reports/traffic.md
+  - from: ideco_client
+    to: ./ru/ngfw/settings/users/ideco-client/README.md
+  - from: client_macos
+    to: ./ru/ngfw/settings/users/ideco-client/ideco-client-macos.md
+  - from: two_factor_authentication
+    to: ./ru/ngfw/settings/users/two-factor-authentication.md
+  - from: web_authorization
+    to: ./ru/ngfw/settings/users/authorization/web-authorization.md
+  - from: web_access_log
+    to: ./ru/ngfw/settings/reports/web-logs.md
+  - from: ddns
+    to: ./ru/ngfw/settings/services/dns/ddns.md
+  - from: ald_pro
+    to: ./ru/ngfw/settings/users/ald-pro.md
+  - from: igmp_proxy
+    to: ./ru/ngfw/settings/services/igmp.md
+  - from: admin_logs
+    to: ./ru/ngfw/settings/reports/administrator-actions.md
+  - from: vpn_connection
+    to: ./ru/ngfw/settings/users/authorization/vpn-connection/README.md
+  - from: security_events
+    to: ./ru/ngfw/settings/reports/security-events.md
+  - from: exceptions
+    to: ./ru/ngfw/settings/access-rules/ips/user-ip-exceptions.md
+  - from: ntp
+    to: ./ru/ngfw/settings/services/ntp.md
+  - from: dhcp_option
+    to: ./ru/ngfw/settings/services/dhcp.md
+  - from: radius
+    to: ./ru/ngfw/settings/users/radius.md
+  - from: vce
+    to: ./ru/ngfw/settings/server-management/vce.md
+  - from: antivirus_log
+    to: ./ru/ngfw/settings/reports/antivirus-logs.md
+  - from: auto-logout-script
+    to: ./ru/ngfw/settings/users/active-directory/auto-de-authorization-script.md
+  - from: auto_logout_script
+    to: ./ru/ngfw/settings/users/active-directory/auto-de-authorization-script.md
+  - from: session_sync
+    to: ./ru/ngfw/settings/server-management/cluster.md
+  - from: device-profiles
+    to: ./ru/ngfw/settings/users/hip-profiles.md
+  - from: dhcp_wpad
+    to: ./ru/ngfw/settings/services/dhcp.md
+  - from: user_personal_account
+    to: ./ru/ngfw/settings/users/user-personal-account.md
+  - from: dpi
+    to: ./ru/ngfw/settings/security-profiles/application-control/README.md
+  - from: version_support
+    to: ./ru/ngfw/general/support-period.md
